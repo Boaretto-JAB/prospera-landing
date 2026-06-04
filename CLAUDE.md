@@ -80,9 +80,8 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 - **Endereço:** Rua João Caldart, 129 – Apto. 302, Capinzal/SC
 - **Horário:** Segunda a sexta, das 8h às 18h
 
-> **Observação:** hoje a `index.html` **não tem link** para a `calculadora.html`.
-> A calculadora só é acessível pela URL direta (`/calculadora.html`). Se o dono
-> quiser, dá para adicionar um link no menu/serviços — mas só fazer se ele pedir.
+> **Navegação para a calculadora:** o menu (desktop e mobile) tem o item
+> **"Calculadora"**, logo após "Serviços", apontando para `calculadora.html`.
 
 ---
 
@@ -92,12 +91,13 @@ Calcula, a partir de poucos campos, o **DAS**, o **pró-labore líquido** e quan
 **sobra para o sócio**. Resultado atualiza em tempo real (evento `input`).
 Todo o cálculo está num `<script>` no fim do arquivo. Valores **vigentes em 2026**.
 
-**Campos do formulário (e valores padrão):**
-- Anexo do Simples (botões III/V) — começa em **III**
-- Faturamento mensal médio — padrão **R$ 27.000**
-- Pró-labore bruto — padrão **R$ 1.621** (1 salário mínimo)
-- Folha de funcionários (salário base) — padrão **R$ 0**
-- Despesas diversas — padrão **R$ 350**
+**Campos do formulário:** abrem **em branco** (placeholder `0,00`); campo vazio
+é tratado como **zero** no cálculo, então a página inicia com tudo "R$ 0,00".
+O botão de Anexo (III/V) inicia em **III**.
+- Faturamento mensal médio
+- Pró-labore bruto _(dica no campo: mínimo 1 salário, R$ 1.621,00)_
+- Folha de funcionários (salário base)
+- Despesas diversas
 
 **Fórmulas (não quebrar):**
 - **DAS** = faturamento do mês × **alíquota efetiva**
@@ -114,10 +114,11 @@ Todo o cálculo está num `<script>` no fim do arquivo. Valores **vigentes em 20
   - acima de R$ 7.350 → tabela progressiva cheia (`TABELA_IR`).
 - **Encargos da folha ≈ 29%** (FGTS 8% + 13º + férias + 1/3 + FGTS sobre provisões).
 
-**Conferência (já validada):** faturamento R$ 27.000, Anexo III, pró-labore
-R$ 1.621, com os valores **padrão** do formulário (folha R$ 0, despesas R$ 350)
+**Conferência (cenário de teste, já validado):** digitando faturamento R$ 27.000,
+Anexo III, pró-labore R$ 1.621, folha R$ 0 e despesas R$ 350
 → **DAS R$ 2.244,00** (alíquota 8,3111%) e **líquido ao sócio R$ 24.227,69**.
-_(Zerando as despesas, o líquido seria R$ 24.577,69.)_
+_(Sem despesas, o líquido seria R$ 24.577,69.)_ Use este caso para revalidar a
+lógica depois de mexer no JS.
 
 > ⚠️ **IMPORTANTE:** esses números mudam por ano e por lei. **Antes de alterar
 > QUALQUER valor fiscal**, pesquise e confirme a regra vigente e **informe a fonte**
