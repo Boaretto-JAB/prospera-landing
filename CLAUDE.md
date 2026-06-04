@@ -30,6 +30,7 @@ outro passo de deploy.
 |---|---|
 | `index.html` | Landing page principal (~666 linhas). |
 | `calculadora.html` | Calculadora do Simples Nacional para prestadores de serviço (~351 linhas). |
+| `guia-cnpj.html` | Página "Guia do CNPJ" — conteúdo educativo para quem abriu empresa (~204 linhas). |
 | `CNAME` | Contém `prospera-contabil.com` (config do domínio no GitHub Pages). |
 | `CLAUDE.md` | Este arquivo (memória do projeto). |
 | `README.md` | Resumo curto do projeto. |
@@ -41,6 +42,19 @@ Ao ler os arquivos, pule essas linhas para economizar contexto:
 
 - `index.html`: linha **10** (favicon), linhas **345** e **401** (logo)
 - `calculadora.html`: linha **8** (favicon), linha **120** (logo)
+- `guia-cnpj.html`: linha **8** (favicon), linha **109** (logo)
+
+### Página Guia do CNPJ (`guia-cnpj.html`)
+Conteúdo educativo, no mesmo padrão visual do site. Foi **gerada** reaproveitando o
+favicon e o logo da `calculadora.html` (extraídos por script, para não recriar o
+base64). Tem um índice + 3 temas do manual de boas-vindas: pró-labore × distribuição
+de lucros (com link para a calculadora), golpes/boletos falsos, e avisar antes de
+mudar a empresa. Para editar, abra o arquivo e pule as linhas de base64 (8 e 109).
+
+**Acesso:** o Guia **não** está no menu principal (já tem 6 itens; um 7º — somado a
+"Calculadora do Simples", que é largo — estouraria a barra antes de virar sanduíche).
+Está linkado no **rodapé** e ao **final da seção "Dúvidas"** da home. A calculadora
+também foi adicionada ao rodapé.
 
 ---
 
