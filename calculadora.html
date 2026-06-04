@@ -146,25 +146,25 @@
 
         <div class="field">
           <label for="fat">Faturamento mensal médio</label>
-          <div class="inp"><span class="pre">R$</span><input type="number" id="fat" min="0" step="100" value="27000" inputmode="decimal" /></div>
+          <div class="inp"><span class="pre">R$</span><input type="number" id="fat" min="0" step="100" placeholder="0,00" inputmode="decimal" /></div>
           <p class="hint">Usado como base; multiplico por 12 para achar a faixa (RBT12).</p>
         </div>
 
         <div class="field">
           <label for="pl">Pró-labore (bruto)</label>
-          <div class="inp"><span class="pre">R$</span><input type="number" id="pl" min="0" step="100" value="1621" inputmode="decimal" /></div>
+          <div class="inp"><span class="pre">R$</span><input type="number" id="pl" min="0" step="100" placeholder="0,00" inputmode="decimal" /></div>
           <p class="hint">Mínimo: 1 salário (R$ 1.621,00). Calculo o INSS (11%) e o IR conforme a regra de 2026.</p>
         </div>
 
         <div class="field">
           <label for="folha">Folha de funcionários — salário base</label>
-          <div class="inp"><span class="pre">R$</span><input type="number" id="folha" min="0" step="100" value="0" inputmode="decimal" /></div>
+          <div class="inp"><span class="pre">R$</span><input type="number" id="folha" min="0" step="100" placeholder="0,00" inputmode="decimal" /></div>
           <p class="hint">Informe só o <b>salário base</b> da equipe. Eu calculo os encargos do Simples (FGTS, 13º e férias + 1/3 ≈ +29%).</p>
         </div>
 
         <div class="field">
           <label for="desp">Despesas diversas</label>
-          <div class="inp"><span class="pre">R$</span><input type="number" id="desp" min="0" step="50" value="350" inputmode="decimal" /></div>
+          <div class="inp"><span class="pre">R$</span><input type="number" id="desp" min="0" step="50" placeholder="0,00" inputmode="decimal" /></div>
           <p class="hint">Some aqui todos os custos do mês: <b>contabilidade</b>, <b>despesas bancárias</b> (tarifas da conta), aluguel, software, marketing, etc.</p>
         </div>
       </section>
