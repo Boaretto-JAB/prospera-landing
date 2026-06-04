@@ -68,7 +68,7 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 - **Hero:** headline _"Tecnologia e experiência transformando números em sucesso."_ + placa da marca.
 - **Sobre (01):** texto + 3 pilares (Tecnologia, Experiência, Sucesso).
 - **Serviços (02):** 6 cards (Contabilidade; Fiscal e Tributário; Departamento Pessoal; Abertura e Regularização; Planejamento Tributário; Consultoria Financeira).
-- **FAQ / Dúvidas (03):** 6 perguntas em acordeão.
+- **FAQ / Dúvidas (03):** 9 perguntas em acordeão. As 3 últimas vieram do manual de boas-vindas: pró-labore × distribuição de lucros (com link para a calculadora), golpes/boletos falsos após abrir o CNPJ, e avisar a contabilidade antes de mudar algo na empresa. Links dentro das respostas usam a regra `.faq-a a`.
 - **Contato:** painel marinho com CTA + cartão de contatos.
 - **Footer** + **botão flutuante de WhatsApp**.
 - **JavaScript no fim:** ano automático no rodapé, header ao rolar, menu mobile, acordeão do FAQ e animações de entrada (`IntersectionObserver`, respeitando `prefers-reduced-motion`).
