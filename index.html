@@ -131,7 +131,7 @@
     .brand .wordmark span{font-family:var(--serif-body);font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint);margin-top:.35em;}
     .nav-links{display:flex;align-items:center;gap:2.1rem;margin-left:auto;}
     .nav-links a{
-      font-size:.95rem;letter-spacing:.04em;color:var(--ink-soft);position:relative;padding:.2em 0;
+      font-size:.95rem;letter-spacing:.04em;color:var(--ink-soft);position:relative;padding:.2em 0;white-space:nowrap;
     }
     .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--navy);transition:width .3s ease;}
     .nav-links a:hover{color:var(--navy);}
@@ -142,12 +142,13 @@
 
     /* menu mobile */
     .mobile-menu{
-      display:none;position:fixed;inset:78px 0 auto 0;z-index:49;
+      display:flex;visibility:hidden;position:fixed;inset:78px 0 auto 0;z-index:49;
       background:var(--paper);border-bottom:1px solid var(--line);
       padding:1.4rem var(--gutter) 2rem;flex-direction:column;gap:.2rem;
-      transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s ease;
+      transform:translateY(-12px);opacity:0;pointer-events:none;
+      transition:opacity .3s ease, transform .3s ease, visibility .3s ease;
     }
-    .mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .mobile-menu.open{visibility:visible;transform:translateY(0);opacity:1;pointer-events:auto;}
     .mobile-menu a{padding:.9rem 0;border-bottom:1px solid var(--line);font-size:1.1rem;color:var(--ink);}
     .mobile-menu .btn{margin-top:1.2rem;}
 
@@ -309,6 +310,9 @@
 
     /* ---------- Responsivo ---------- */
     @media (max-width:980px){
+      /* menu vira sanduíche já em telas médias: o item "Calculadora do Simples" não cabe na barra horizontal */
+      .nav-links{display:none;}
+      .menu-btn{display:block;}
       .hero-grid{grid-template-columns:1fr;}
       .brand-plate{max-width:380px;margin:0 auto;aspect-ratio:1/.92;}
       .about-grid{grid-template-columns:1fr;gap:3rem;}
@@ -319,8 +323,6 @@
     }
     @media (max-width:760px){
       body{font-size:17px;}
-      .nav-links{display:none;}
-      .menu-btn{display:block;}
       .nav-cta{gap:0;}
       .hero{padding:120px 0 72px;}
       .services{grid-template-columns:1fr;}
@@ -349,7 +351,7 @@
         <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="calculadora.html">Calculadora</a>
+        <a href="calculadora.html">Calculadora do Simples</a>
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -366,7 +368,7 @@
     <a href="#inicio">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
-    <a href="calculadora.html">Calculadora</a>
+    <a href="calculadora.html">Calculadora do Simples</a>
     <a href="#duvidas">Dúvidas</a>
     <a href="#contato">Contato</a>
     <a class="btn btn-primary" href="https://wa.me/5549998400684?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Prospera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Fale no WhatsApp</a>
