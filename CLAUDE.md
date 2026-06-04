@@ -64,7 +64,7 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 
 ## 4. Estrutura da `index.html`
 
-- **Header fixo** com navegação alinhada à direita: Início, Sobre, Serviços, Calculadora, Dúvidas, Contato. Vira opaco ao rolar (`.scrolled`). Menu mobile (hambúrguer). O WhatsApp fica **só no botão flutuante** (canto inferior direito), não no header.
+- **Header fixo** com navegação alinhada à direita: Início, Sobre, Serviços, Calculadora do Simples, Dúvidas, Contato. Vira opaco ao rolar (`.scrolled`). Menu mobile (hambúrguer). O WhatsApp fica **só no botão flutuante** (canto inferior direito), não no header.
 - **Hero:** headline _"Tecnologia e experiência transformando números em sucesso."_ + placa da marca.
 - **Sobre (01):** texto + 3 pilares (Tecnologia, Experiência, Sucesso).
 - **Serviços (02):** 6 cards (Contabilidade; Fiscal e Tributário; Departamento Pessoal; Abertura e Regularização; Planejamento Tributário; Consultoria Financeira).
@@ -81,7 +81,7 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 - **Horário:** Segunda a sexta, das 8h às 18h
 
 > **Navegação para a calculadora:** o menu (desktop e mobile) tem o item
-> **"Calculadora"**, logo após "Serviços", apontando para `calculadora.html`.
+> **"Calculadora do Simples"**, logo após "Serviços", apontando para `calculadora.html`.
 
 ---
 
