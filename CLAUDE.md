@@ -47,14 +47,15 @@ Ao ler os arquivos, pule essas linhas para economizar contexto:
 ### Página Guia do CNPJ (`guia-cnpj.html`)
 Conteúdo educativo, no mesmo padrão visual do site. Foi **gerada** reaproveitando o
 favicon e o logo da `calculadora.html` (extraídos por script, para não recriar o
-base64). Tem um índice + 3 temas do manual de boas-vindas: pró-labore × distribuição
-de lucros (com link para a calculadora), golpes/boletos falsos, e avisar antes de
-mudar a empresa. Para editar, abra o arquivo e pule as linhas de base64 (8 e 109).
+base64). Tem um índice + **7 temas** do manual de boas-vindas: (01) pró-labore ×
+distribuição de lucros — com link para a calculadora, (02) golpes/boletos falsos,
+(03) avisar antes de mudar a empresa, (04) como/quando se paga o Simples (o DAS),
+(05) notas fiscais, (06) certificado digital (e-CNPJ), (07) guarda de documentos por
+5 anos. Para editar, abra o arquivo e pule as linhas de base64 (8 e 109).
 
-**Acesso:** o Guia **não** está no menu principal (já tem 6 itens; um 7º — somado a
-"Calculadora do Simples", que é largo — estouraria a barra antes de virar sanduíche).
-Está linkado no **rodapé** e ao **final da seção "Dúvidas"** da home. A calculadora
-também foi adicionada ao rodapé.
+**Acesso:** o Guia está no **menu** (desktop e mobile, após "Calculadora do Simples"),
+no **rodapé** e ao **final da seção "Dúvidas"** da home. A calculadora também está no
+rodapé.
 
 ---
 
@@ -78,11 +79,11 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 
 ## 4. Estrutura da `index.html`
 
-- **Header fixo** com navegação alinhada à direita: Início, Sobre, Serviços, Calculadora do Simples, Dúvidas, Contato. Vira opaco ao rolar (`.scrolled`). Menu mobile (hambúrguer). O WhatsApp fica **só no botão flutuante** (canto inferior direito), não no header.
+- **Header fixo** com navegação alinhada à direita: Início, Sobre, Serviços, Calculadora do Simples, Guia do CNPJ, Dúvidas, Contato. Vira opaco ao rolar (`.scrolled`). Com 7 itens, vira **menu mobile (hambúrguer) em telas ≤1100px** (regra separada do breakpoint de 980px, que cuida do layout do hero/serviços). O WhatsApp fica **só no botão flutuante** (canto inferior direito), não no header.
 - **Hero:** headline _"Tecnologia e experiência transformando números em sucesso."_ + placa da marca.
 - **Sobre (01):** texto + 3 pilares (Tecnologia, Experiência, Sucesso).
 - **Serviços (02):** 6 cards (Contabilidade; Fiscal e Tributário; Departamento Pessoal; Abertura e Regularização; Planejamento Tributário; Consultoria Financeira).
-- **FAQ / Dúvidas (03):** 9 perguntas em acordeão. As 3 últimas vieram do manual de boas-vindas: pró-labore × distribuição de lucros (com link para a calculadora), golpes/boletos falsos após abrir o CNPJ, e avisar a contabilidade antes de mudar algo na empresa. Links dentro das respostas usam a regra `.faq-a a`.
+- **FAQ / Dúvidas (03):** 6 perguntas em acordeão. Ao final, um link para o **Guia do CNPJ** (usa a classe `.services-note`). Obs.: os temas pró-labore × lucros, golpes/boletos e mudanças na empresa **saíram do FAQ** e viraram seções do Guia (para não duplicar). Links dentro das respostas usam a regra `.faq-a a`.
 - **Contato:** painel marinho com CTA + cartão de contatos.
 - **Footer** + **botão flutuante de WhatsApp**.
 - **JavaScript no fim:** ano automático no rodapé, header ao rolar, menu mobile, acordeão do FAQ e animações de entrada (`IntersectionObserver`, respeitando `prefers-reduced-motion`).
