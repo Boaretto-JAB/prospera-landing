@@ -81,7 +81,7 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 
 - **Header fixo** com navegação alinhada à direita: Início, Sobre, Serviços, Calculadora do Simples, Guia do CNPJ, Dúvidas, Contato. Vira opaco ao rolar (`.scrolled`). Com 7 itens, vira **menu mobile (hambúrguer) em telas ≤1100px** (regra separada do breakpoint de 980px, que cuida do layout do hero/serviços). O WhatsApp fica **só no botão flutuante** (canto inferior direito), não no header.
 - **Hero:** headline _"Tecnologia e experiência transformando números em sucesso."_ + placa da marca.
-- **Sobre (01):** texto + 3 pilares (Tecnologia, Experiência, Sucesso).
+- **Sobre (01):** texto de apresentação (inclui os sócios com **mais de 15 anos cada** em contábil, fiscal, departamento pessoal, gestão financeira e controladoria) + 3 pilares: **Tecnologia** (destaca os **agentes de IA** — conferência de cálculos, automação, controle de CNDs, notas fiscais, auditorias), **Experiência**, **Sucesso**. _Ideia futura do dono: uma página dedicada aos fundadores/equipe._
 - **Serviços (02):** 6 cards (Contabilidade; Fiscal e Tributário; Departamento Pessoal; Abertura e Regularização; Planejamento Tributário; Consultoria Financeira).
 - **FAQ / Dúvidas (03):** 6 perguntas em acordeão. Ao final, um link para o **Guia do CNPJ** (usa a classe `.services-note`). Obs.: os temas pró-labore × lucros, golpes/boletos e mudanças na empresa **saíram do FAQ** e viraram seções do Guia (para não duplicar). Links dentro das respostas usam a regra `.faq-a a`.
 - **Contato:** painel marinho com CTA + cartão de contatos.
