@@ -129,7 +129,7 @@
     .brand .wordmark{display:flex;flex-direction:column;line-height:1;}
     .brand .wordmark b{font-family:var(--trajan);font-weight:600;font-size:1.18rem;letter-spacing:.22em;color:var(--ink);}
     .brand .wordmark span{font-family:var(--serif-body);font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint);margin-top:.35em;}
-    .nav-links{display:flex;align-items:center;gap:2.1rem;margin-left:auto;}
+    .nav-links{display:flex;align-items:center;gap:1.6rem;margin-left:auto;}
     .nav-links a{
       font-size:.95rem;letter-spacing:.04em;color:var(--ink-soft);position:relative;padding:.2em 0;white-space:nowrap;
     }
@@ -311,10 +311,12 @@
     .hero .a4{animation-delay:.5s;} .hero .a5{animation-delay:.65s;} .hero .a6{animation-delay:.5s;}
 
     /* ---------- Responsivo ---------- */
-    @media (max-width:980px){
-      /* menu vira sanduíche já em telas médias: o item "Calculadora do Simples" não cabe na barra horizontal */
+    /* menu vira sanduíche em ≤1100px: com 7 itens (e "Calculadora do Simples") a barra horizontal não cabe com folga */
+    @media (max-width:1100px){
       .nav-links{display:none;}
       .menu-btn{display:block;}
+    }
+    @media (max-width:980px){
       .hero-grid{grid-template-columns:1fr;}
       .brand-plate{max-width:380px;margin:0 auto;aspect-ratio:1/.92;}
       .about-grid{grid-template-columns:1fr;gap:3rem;}
@@ -354,6 +356,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="calculadora.html">Calculadora do Simples</a>
+        <a href="guia-cnpj.html">Guia do CNPJ</a>
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -371,6 +374,7 @@
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
     <a href="calculadora.html">Calculadora do Simples</a>
+    <a href="guia-cnpj.html">Guia do CNPJ</a>
     <a href="#duvidas">Dúvidas</a>
     <a href="#contato">Contato</a>
     <a class="btn btn-primary" href="https://wa.me/5549998400684?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Prospera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Fale no WhatsApp</a>
@@ -532,18 +536,6 @@
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Preciso ir até o escritório?<span class="faq-sign" aria-hidden="true"></span></button>
             <div class="faq-a"><p>Não é necessário. Todo o processo pode ser feito de forma remota. Se você preferir um encontro presencial em Capinzal, é só combinar um horário.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Qual a diferença entre pró-labore e distribuição de lucros?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>O <b>pró-labore</b> é a remuneração do sócio pelo trabalho na empresa — sobre ele incide o INSS (e, conforme o valor, o Imposto de Renda). Já a <b>distribuição de lucros</b> é o que sobra do resultado do mês depois de pagar os impostos, o pró-labore e as despesas — e é <b>isenta de Imposto de Renda</b> quando feita corretamente. Por isso é tão importante manter a conta da empresa (PJ) separada da conta pessoal (PF). Quer ver na prática? Faça uma simulação na nossa <a href="calculadora.html">Calculadora do Simples</a>.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Comecei a receber boletos e cobranças após abrir a empresa. Preciso pagar?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Na grande maioria das vezes, não. Logo depois da abertura é comum chegarem boletos, cartas e e-mails de supostas “entidades” cobrando “taxas obrigatórias”, “anuidades” ou “publicações” — boa parte é golpe ou cobrança indevida. A regra de ouro: <b>pague apenas o que você realmente contratou</b> ou o que a sua contabilidade enviar pelos canais oficiais. Na dúvida, não pague e não informe seus dados — envie o documento para a gente conferir antes.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Vou mudar algo na empresa (endereço, sócios, atividade). Preciso avisar a contabilidade?<span class="faq-sign" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Sim, sempre avise <b>antes</b>. Mudanças feitas sem orientação podem gerar multa e retrabalho. Fale com a gente antes de mudar o endereço, alterar sócios, incluir ou trocar a atividade (CNAE), abrir filial, contratar o primeiro funcionário, ajustar o pró-labore ou encerrar as atividades — orientamos o caminho certo em cada caso.</p></div>
           </div>
         </div>
         <p class="services-note reveal">Quer se aprofundar? Veja o nosso <a href="guia-cnpj.html">Guia do CNPJ</a> — reunimos o essencial para operar sua empresa com segurança desde o primeiro dia.</p>
