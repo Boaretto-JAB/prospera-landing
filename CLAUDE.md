@@ -28,9 +28,9 @@ outro passo de deploy.
 
 | Arquivo | O que é |
 |---|---|
-| `index.html` | Landing page principal (~666 linhas). |
+| `index.html` | Landing page principal (~676 linhas). |
 | `calculadora.html` | Calculadora do Simples Nacional para prestadores de serviço (~351 linhas). |
-| `guia-cnpj.html` | Página "Guia do CNPJ" — conteúdo educativo para quem abriu empresa (~204 linhas). |
+| `guia-cnpj.html` | Página "Guia do CNPJ" — conteúdo educativo para quem abriu empresa (~236 linhas). |
 | `CNAME` | Contém `prospera-contabil.com` (config do domínio no GitHub Pages). |
 | `CLAUDE.md` | Este arquivo (memória do projeto). |
 | `README.md` | Resumo curto do projeto. |
@@ -40,7 +40,9 @@ O logo e o favicon estão embutidos como base64 em **linhas únicas muito longas
 **Nunca recrie nem recodifique esse base64** — preserve exatamente como está.
 Ao ler os arquivos, pule essas linhas para economizar contexto:
 
-- `index.html`: linha **10** (favicon), linhas **345** e **401** (logo)
+- `index.html`: linha **10** (favicon), linhas **351** e **407** (logo)
+  — ⚠️ essas posições deslizam quando o arquivo é editado; confirme com
+  `awk '{ if (length($0) > 900) print NR }' index.html` antes de confiar nelas
 - `calculadora.html`: linha **8** (favicon), linha **120** (logo)
 - `guia-cnpj.html`: linha **8** (favicon), linha **109** (logo)
 

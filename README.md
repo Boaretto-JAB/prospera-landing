@@ -11,6 +11,9 @@ para prestadores de serviço no Simples Nacional.
 - **`calculadora.html`** — calculadora do Simples Nacional (estima DAS, pró-labore
   e quanto sobra para o sócio nos Anexos III e V). É uma estimativa para
   planejamento e **não substitui a apuração oficial**.
+- **`guia-cnpj.html`** — Guia do CNPJ: 7 temas educativos para quem abriu
+  empresa (pró-labore × lucros, golpes, DAS, notas fiscais, e-CNPJ, guarda de
+  documentos…). Está no menu, no rodapé e ao final da seção "Dúvidas".
 
 ## Como funciona
 
