@@ -289,6 +289,34 @@
     .faq-a a{color:var(--navy);border-bottom:1px solid rgba(18,67,108,.4);font-weight:500;}
     .faq-a a:hover{border-color:var(--navy);}
 
+    /* ---------- Faixa de destaques ---------- */
+    .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+    .stat{padding:1.9rem 1.5rem;text-align:center;}
+    .stat + .stat{border-left:1px solid var(--line);}
+    .stat b{display:block;font-family:var(--serif-display);font-weight:500;font-size:clamp(2.2rem,4vw,2.9rem);line-height:1;color:var(--navy);}
+    .stat span{display:block;margin-top:.55rem;font-family:var(--trajan);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);}
+
+    /* ---------- Tecnologia ---------- */
+    .tech-intro{max-width:62ch;margin:-1.5rem 0 2.6rem;font-size:1.12rem;}
+
+    /* ---------- Proposta ---------- */
+    .proposal-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:start;}
+    .steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.2rem;counter-reset:passo;}
+    .steps li{counter-increment:passo;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;color:var(--ink-soft);}
+    .steps li::before{content:counter(passo,decimal-leading-zero);font-family:var(--serif-display);font-size:1.6rem;color:var(--navy);opacity:.5;line-height:1;}
+    .steps li b{color:var(--ink);font-weight:500;}
+    .form-card{background:var(--paper-3);border:1px solid var(--line);padding:clamp(1.6rem,3vw,2.4rem);box-shadow:0 30px 60px -45px rgba(14,53,86,.5);}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .fld{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;}
+    .fld label{font-size:.95rem;color:var(--ink);}
+    .fld label small{color:var(--ink-faint);}
+    .fld input,.fld select,.fld textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;padding:.65rem .75rem;width:100%;}
+    .fld textarea{min-height:84px;resize:vertical;}
+    .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(18,67,108,.12);}
+    .form-card .btn{width:100%;margin-top:.4rem;}
+    .form-note{font-size:.86rem;color:var(--ink-faint);margin:.9rem 0 0;}
+
     /* ---------- Contato ---------- */
     .contact{
       background:linear-gradient(160deg,var(--navy) 0%, var(--navy-deep) 100%);
@@ -366,6 +394,7 @@
       .hero-grid{grid-template-columns:1fr;}
       .brand-plate{max-width:380px;margin:0 auto;aspect-ratio:1/.92;}
       .about-grid{grid-template-columns:1fr;gap:3rem;}
+      .proposal-grid{grid-template-columns:1fr;}
       .services{grid-template-columns:repeat(2,1fr);}
       .contact-grid{grid-template-columns:1fr;}
       .foot-grid{grid-template-columns:1fr 1fr;}
@@ -377,6 +406,10 @@
       .hero{padding:120px 0 72px;}
       .services{grid-template-columns:1fr;}
       .foot-grid{grid-template-columns:1fr;gap:2.2rem;}
+      .stats-grid{grid-template-columns:1fr;}
+      .stat{padding:1.3rem 1rem;}
+      .stat + .stat{border-left:none;border-top:1px solid var(--line);}
+      .form-row{grid-template-columns:1fr;gap:0;}
       .foot-bottom{flex-direction:column;align-items:flex-start;}
       .brand .wordmark span{display:none;}
       .nav-client{display:none;}
@@ -446,7 +479,7 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
               Falar no WhatsApp
             </a>
-            <a class="btn btn-outline" href="#servicos">Conheça os serviços</a>
+            <a class="btn btn-outline" href="#proposta">Peça uma proposta</a>
           </div>
           <div class="hero-meta anim a5">
             <span class="dot"></span> Atendimento 100% digital
@@ -466,6 +499,15 @@
       </div>
     </section>
 
+    <!-- ======================= FAIXA DE DESTAQUES ======================= -->
+    <section class="stats" aria-label="Destaques">
+      <div class="wrap stats-grid">
+        <div class="stat reveal"><b>15+</b><span>anos de experiência de cada sócia</span></div>
+        <div class="stat reveal"><b>4</b><span>estados com clientes atendidos</span></div>
+        <div class="stat reveal"><b>100%</b><span>atendimento digital</span></div>
+      </div>
+    </section>
+
     <!-- ======================= SOBRE ======================= -->
     <section class="section" id="sobre">
       <div class="wrap">
@@ -476,7 +518,7 @@
         <div class="about-grid">
           <div class="about-lead reveal">
             <p>A Prospera nasceu para descomplicar a vida de quem presta serviço. Unimos o rigor técnico da contabilidade a ferramentas digitais que transformam dados em informação útil — para que cada decisão da sua empresa seja tomada com segurança.</p>
-            <p>À frente do escritório estão sócios com mais de 15 anos de experiência, cada um, nas áreas contábil, fiscal, de departamento pessoal, gestão financeira e controladoria.</p>
+            <p>À frente do escritório estão as sócias, contadoras com mais de 15 anos de experiência cada uma nas áreas contábil, fiscal, de departamento pessoal, gestão financeira e controladoria.</p>
             <p>Nada de relatórios indecifráveis ou burocracia que trava o seu dia. Aqui, você tem um time próximo, que fala a sua língua e está sempre por perto.</p>
             <div class="sig">“Tecnologia e experiência transformando números em sucesso.”</div>
           </div>
@@ -485,7 +527,7 @@
               <div class="pnum">01</div>
               <div>
                 <h3>Tecnologia</h3>
-                <p>Agentes de inteligência artificial que conferem cálculos, automatizam processos, controlam CNDs e apoiam a emissão de notas fiscais e auditorias — mais agilidade e segurança, com relatórios claros.</p>
+                <p>Automação e inteligência artificial a serviço da sua empresa: conferências, alertas e controles que rodam sozinhos, sempre com o olhar das nossas contadoras. <a href="#tecnologia" style="color:var(--navy);border-bottom:1px solid rgba(18,67,108,.4);">Veja na prática</a>.</p>
               </div>
             </div>
             <div class="pillar">
@@ -554,15 +596,118 @@
             <p>Análise de indicadores e desempenho para melhorar a performance e a rentabilidade do seu negócio.</p>
           </div>
         </div>
-        <p class="services-note reveal">Não encontrou o que precisa? <a href="https://wa.me/5549998400684?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Prospera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Fale com a Prospera no WhatsApp</a> — cada negócio é único e a gente monta o atendimento certo.</p>
+        <p class="services-note reveal" id="servicos-nota">Não encontrou o que precisa? <a href="https://wa.me/5549998400684?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Prospera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Fale com a Prospera no WhatsApp</a> — cada negócio é único e a gente monta o atendimento certo.</p>
       </div>
     </section>
+
+    <div class="wrap"><div class="divider"><span class="diamond"></span></div></div>
+
+    <!-- ======================= TECNOLOGIA ======================= -->
+    <section class="section" id="tecnologia">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">03 — Tecnologia a seu favor</span>
+          <h2>O que a nossa tecnologia faz pela sua empresa.</h2>
+        </div>
+        <p class="tech-intro reveal">Enquanto você trabalha, sistemas próprios da Prospera acompanham a sua empresa nos órgãos públicos e avisam a nossa equipe quando algo precisa de atenção — antes de virar problema.</p>
+        <div class="services">
+          <div class="service reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.5-7.5A2 2 0 0 1 7.4 4h9.2a2 2 0 0 1 1.9 1.5L21 13v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 13h5l1.5 2.5h5L16 13h5"/></svg></div>
+            <h3>Receita Federal sob vigilância</h3>
+            <p>Consultamos de forma automática a Caixa Postal do e-CAC e a DCTFWeb da sua empresa. Chegou um aviso ou apareceu uma pendência? A gente vê primeiro e age antes que vire multa.</p>
+          </div>
+          <div class="service reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Certidões negativas acompanhadas</h3>
+            <p>As certidões da empresa são monitoradas automaticamente — para você estar regular na hora de fechar um contrato, pedir crédito ou participar de uma licitação.</p>
+          </div>
+          <div class="service reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div>
+            <h3>Certificado e procuração em dia</h3>
+            <p>Avisamos antes de vencer o certificado digital da empresa e a procuração eletrônica. Nada de descobrir no dia em que a nota não sai.</p>
+          </div>
+          <div class="service reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+            <h3>Notas fiscais sem erro</h3>
+            <p>Sua empresa fica cadastrada no nosso emissor de NFS-e, com os dados fiscais já configurados e pronta para o padrão nacional da nota de serviço.</p>
+          </div>
+          <div class="service reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2.5V6M15 2.5V6M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5"/><path d="M10 10h4v4h-4z"/></svg></div>
+            <h3>Conferência com inteligência artificial</h3>
+            <p>Agentes de IA conferem cálculos e apurações antes de chegarem até você — mais agilidade e menos chance de erro, sempre com a revisão das nossas contadoras.</p>
+          </div>
+          <div class="service reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5L12 11l2.5 2.5"/></svg></div>
+            <h3>Portal do Cliente 24 horas</h3>
+            <p>No <a href="https://onvio.com.br" target="_blank" rel="noopener" style="color:var(--navy);border-bottom:1px solid rgba(18,67,108,.4);">Portal do Cliente (Onvio)</a> você encontra guias, documentos e relatórios a qualquer hora, de qualquer lugar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= DEPOIMENTOS (pronto, aguardando os textos) =======================
+         Para publicar: troque os textos/nome/empresa abaixo pelos depoimentos reais (com autorização
+         do cliente), apague as linhas "MOLDE" e tire este bloco de dentro do comentário.
+    <section class="section" id="depoimentos">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow center">Quem confia na Prospera</span>
+          <h2>O que dizem nossos clientes</h2>
+        </div>
+        <div class="services">
+          <figure class="service reveal" style="margin:0;">
+            <blockquote style="margin:0;font-family:var(--serif-display);font-style:italic;font-size:1.25rem;line-height:1.4;color:var(--ink);">“MOLDE — texto do depoimento, em 2 a 4 linhas.”</blockquote>
+            <figcaption style="margin-top:1.2rem;font-size:.95rem;color:var(--ink-faint);"><b style="color:var(--ink);font-weight:500;">Nome Sobrenome</b><br/>Cargo · Empresa (cidade/UF)</figcaption>
+          </figure>
+          <figure class="service reveal" style="margin:0;">
+            <blockquote style="margin:0;font-family:var(--serif-display);font-style:italic;font-size:1.25rem;line-height:1.4;color:var(--ink);">“MOLDE — texto do depoimento, em 2 a 4 linhas.”</blockquote>
+            <figcaption style="margin-top:1.2rem;font-size:.95rem;color:var(--ink-faint);"><b style="color:var(--ink);font-weight:500;">Nome Sobrenome</b><br/>Cargo · Empresa (cidade/UF)</figcaption>
+          </figure>
+          <figure class="service reveal" style="margin:0;">
+            <blockquote style="margin:0;font-family:var(--serif-display);font-style:italic;font-size:1.25rem;line-height:1.4;color:var(--ink);">“MOLDE — texto do depoimento, em 2 a 4 linhas.”</blockquote>
+            <figcaption style="margin-top:1.2rem;font-size:.95rem;color:var(--ink-faint);"><b style="color:var(--ink);font-weight:500;">Nome Sobrenome</b><br/>Cargo · Empresa (cidade/UF)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    ======================= FIM DEPOIMENTOS ======================= -->
+
+    <!-- ======================= PACOTES (rascunho, aguardando decisão) =======================
+         Textos e nomes são sugestões — ver _conteudo/rascunhos/pacotes.md. Para publicar: ajuste
+         os textos, tire este bloco de dentro do comentário e acrescente "Pacotes" ao menu.
+    <section class="section" id="pacotes">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow center">Pacotes</span>
+          <h2>Escolha o acompanhamento ideal</h2>
+        </div>
+        <div class="services">
+          <div class="service reveal">
+            <span class="idx">Essencial</span>
+            <h3>Para quem trabalha sozinho como PJ</h3>
+            <p>Abertura ou troca de contador · DAS e obrigações do Simples · pró-labore do sócio · NFS-e configurada · vigilância da Receita e certidões · Portal do Cliente · atendimento por WhatsApp.</p>
+          </div>
+          <div class="service reveal">
+            <span class="idx">Completo</span>
+            <h3>Para empresas com equipe</h3>
+            <p>Tudo do Essencial + departamento pessoal completo (admissões, folha, férias, rescisões, eSocial) · relatórios gerenciais mensais · revisão anual do Fator R e do enquadramento.</p>
+          </div>
+          <div class="service reveal">
+            <span class="idx">Consultivo</span>
+            <h3>Para quem quer crescer com números</h3>
+            <p>Tudo do Completo + planejamento tributário anual · comparação Simples × Lucro Presumido · reunião periódica com a contadora · indicadores financeiros do negócio.</p>
+          </div>
+        </div>
+        <p class="services-note reveal">Cada proposta é montada para o seu caso. <a href="#proposta">Peça a sua</a>.</p>
+      </div>
+    </section>
+    ======================= FIM PACOTES ======================= -->
 
     <!-- ======================= FAQ ======================= -->
     <section class="section" id="duvidas" style="background:var(--paper-2);">
       <div class="wrap">
         <div class="section-head center reveal">
-          <span class="eyebrow center">03 — Dúvidas frequentes</span>
+          <span class="eyebrow center">04 — Dúvidas frequentes</span>
           <h2>Perguntas que sempre chegam</h2>
         </div>
         <div class="faq reveal">
@@ -592,6 +737,83 @@
           </div>
         </div>
         <p class="services-note reveal">Quer se aprofundar? Veja o nosso <a href="guia-cnpj.html">Guia do CNPJ</a> — reunimos o essencial para operar sua empresa com segurança desde o primeiro dia.</p>
+      </div>
+    </section>
+
+    <!-- ======================= PROPOSTA ======================= -->
+    <section class="section" id="proposta">
+      <div class="wrap proposal-grid">
+        <div class="reveal">
+          <span class="eyebrow">05 — Proposta</span>
+          <h2 style="margin-top:.7rem;">Peça uma proposta sob medida.</h2>
+          <p class="lead" style="margin-top:1.2rem;">Conte um pouco sobre a sua empresa. Ao enviar, o WhatsApp abre com a mensagem pronta — é só confirmar.</p>
+          <ol class="steps">
+            <li><span><b>Você envia</b> as informações básicas do seu negócio.</span></li>
+            <li><span><b>Analisamos</b> o seu caso: atividade, enquadramento e o que precisa ser feito.</span></li>
+            <li><span><b>Você recebe</b> uma proposta clara, sem compromisso — e, se fechar, cuidamos da troca de contador ou da abertura da empresa.</span></li>
+          </ol>
+        </div>
+        <form class="form-card reveal" id="formProposta" novalidate>
+          <div class="fld">
+            <label for="pNome">Seu nome</label>
+            <input id="pNome" name="nome" type="text" autocomplete="name" required />
+          </div>
+          <div class="form-row">
+            <div class="fld">
+              <label for="pSituacao">Situação</label>
+              <select id="pSituacao" name="situacao">
+                <option>Trocar de contador</option>
+                <option>Abrir uma empresa</option>
+                <option>Passar de MEI para ME</option>
+                <option>Outro assunto</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label for="pRamo">Ramo</label>
+              <select id="pRamo" name="ramo">
+                <option>Profissional PJ</option>
+                <option>Saúde</option>
+                <option>Engenharia e arquitetura</option>
+                <option>TI, marketing ou consultoria</option>
+                <option>Outro ramo de serviço</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fld">
+              <label for="pFat">Faturamento mensal médio</label>
+              <select id="pFat" name="faturamento">
+                <option>Ainda não faturo</option>
+                <option>Até R$ 15 mil</option>
+                <option>De R$ 15 mil a R$ 40 mil</option>
+                <option>De R$ 40 mil a R$ 100 mil</option>
+                <option>Acima de R$ 100 mil</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label for="pFunc">Funcionários</label>
+              <select id="pFunc" name="funcionarios">
+                <option>Nenhum (só os sócios)</option>
+                <option>1 a 3</option>
+                <option>4 a 10</option>
+                <option>Mais de 10</option>
+              </select>
+            </div>
+          </div>
+          <div class="fld">
+            <label for="pCidade">Cidade / UF</label>
+            <input id="pCidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Capinzal/SC" />
+          </div>
+          <div class="fld">
+            <label for="pObs">Algo mais que devemos saber? <small>(opcional)</small></label>
+            <textarea id="pObs" name="obs"></textarea>
+          </div>
+          <button class="btn btn-wa" type="submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+            Enviar pelo WhatsApp
+          </button>
+          <p class="form-note">Seus dados não ficam guardados no site: eles vão direto para a conversa no WhatsApp da Prospera.</p>
+        </form>
       </div>
     </section>
 
@@ -715,6 +937,27 @@
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         ans.style.maxHeight = isOpen ? ans.scrollHeight + 'px' : '0';
       });
+    });
+
+    // Formulário "Peça uma proposta": monta a mensagem e abre o WhatsApp (nada é guardado no site)
+    const formProposta = document.getElementById('formProposta');
+    formProposta.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const v = (id) => document.getElementById(id).value.trim();
+      const nome = document.getElementById('pNome');
+      if (!v('pNome')) { nome.focus(); nome.setAttribute('aria-invalid', 'true'); return; }
+      nome.removeAttribute('aria-invalid');
+      const linhas = [
+        `Olá! Sou ${v('pNome')} e gostaria de uma proposta da Prospera.`,
+        `• Situação: ${v('pSituacao')}`,
+        `• Ramo: ${v('pRamo')}`,
+        `• Faturamento mensal: ${v('pFat')}`,
+        `• Funcionários: ${v('pFunc')}`,
+      ];
+      if (v('pCidade')) linhas.push(`• Cidade: ${v('pCidade')}`);
+      if (v('pObs')) linhas.push('', v('pObs'));
+      if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'proposta-enviada', title: 'Formulário de proposta enviado', event: true });
+      window.open('https://wa.me/5549998400684?text=' + encodeURIComponent(linhas.join('\n')), '_blank', 'noopener');
     });
 
     // Animações de entrada ao rolar
