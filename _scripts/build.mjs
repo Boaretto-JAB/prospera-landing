@@ -31,6 +31,7 @@ const gravacoes = new Map(); // caminho relativo -> conteúdo
 // ---------- utilidades ----------
 const ler = (rel) => fs.readFileSync(path.join(RAIZ, rel), 'utf8');
 const existe = (rel) => fs.existsSync(path.join(RAIZ, rel));
+const listar = (rel) => (existe(rel) ? fs.readdirSync(path.join(RAIZ, rel)) : []); // pasta vazia some do git
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const escXml = esc;
 const waLink = (txt) => `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(txt)}`;
@@ -85,7 +86,7 @@ function pagina(vars) {
 
 // ---------- ramos ("Contabilidade para…") ----------
 const DIR_RAMOS = '_conteudo/ramos';
-const ramos = fs.readdirSync(path.join(RAIZ, DIR_RAMOS)).filter((f) => f.endsWith('.md')).map((f) => {
+const ramos = listar(DIR_RAMOS).filter((f) => f.endsWith('.md')).map((f) => {
   const arq = `${DIR_RAMOS}/${f}`;
   const { dados, corpo } = frontMatter(ler(arq), arq);
   exigir(dados, ['titulo', 'titulo_seo', 'resumo', 'menu', 'ordem', 'eyebrow', 'mensagem_whatsapp', 'ramo_formulario'], arq);
@@ -97,7 +98,7 @@ const ramos = fs.readdirSync(path.join(RAIZ, DIR_RAMOS)).filter((f) => f.endsWit
 // ---------- posts do blog ----------
 const DIR_BLOG = '_conteudo/blog';
 const hoje = hojeISO();
-const posts = fs.readdirSync(path.join(RAIZ, DIR_BLOG)).filter((f) => /^\d{4}-\d{2}-\d{2}-[a-z0-9-]+\.md$/.test(f)).map((f) => {
+const posts = listar(DIR_BLOG).filter((f) => /^\d{4}-\d{2}-\d{2}-[a-z0-9-]+\.md$/.test(f)).map((f) => {
   const arq = `${DIR_BLOG}/${f}`;
   const { dados, corpo } = frontMatter(ler(arq), arq);
   exigir(dados, ['titulo', 'resumo', 'data', 'categoria'], arq);
