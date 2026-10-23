@@ -1,0 +1,5 @@
+# GitHub Pages (Jekyll). Estes arquivos são internos e não devem virar páginas do site.
+# Pastas que começam com "_" (_conteudo, _modelos, _scripts) já ficam de fora sozinhas.
+exclude:
+  - CLAUDE.md
+  - README.md

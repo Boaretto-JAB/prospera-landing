@@ -289,6 +289,15 @@
     .faq-a a{color:var(--navy);border-bottom:1px solid rgba(18,67,108,.4);font-weight:500;}
     .faq-a a:hover{border-color:var(--navy);}
 
+    /* ---------- Cartões do blog (seção Novidades, gerada pelo build) ---------- */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+    .card{background:var(--paper-2);padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:background .25s ease;}
+    .card:hover{background:var(--paper-3);}
+    .card .cat{font-family:var(--trajan);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);font-weight:600;}
+    .card h3{font-size:1.38rem;line-height:1.2;}
+    .card p{font-size:1rem;color:var(--ink-soft);margin:0;}
+    .card .data{font-size:.86rem;color:var(--ink-faint);margin-top:auto;padding-top:.6rem;}
+
     /* ---------- Faixa de destaques ---------- */
     .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);}
     .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);}
@@ -344,7 +353,7 @@
 
     /* ---------- Footer ---------- */
     footer{background:#11141A;color:#cfd2d8;padding:clamp(56px,7vw,84px) 0 0;}
-    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;}
     .foot-brand img{height:40px;margin-bottom:1.3rem;}
     .foot-brand .pname{font-family:var(--trajan);font-weight:600;color:#fff;letter-spacing:.26em;font-size:1.25rem;}
     .foot-brand .ptag{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:#7e858f;margin-top:.5rem;}
@@ -395,6 +404,7 @@
       .brand-plate{max-width:380px;margin:0 auto;aspect-ratio:1/.92;}
       .about-grid{grid-template-columns:1fr;gap:3rem;}
       .proposal-grid{grid-template-columns:1fr;}
+      .cards{grid-template-columns:repeat(2,1fr);}
       .services{grid-template-columns:repeat(2,1fr);}
       .contact-grid{grid-template-columns:1fr;}
       .foot-grid{grid-template-columns:1fr 1fr;}
@@ -407,6 +417,7 @@
       .services{grid-template-columns:1fr;}
       .foot-grid{grid-template-columns:1fr;gap:2.2rem;}
       .stats-grid{grid-template-columns:1fr;}
+      .cards{grid-template-columns:1fr;}
       .stat{padding:1.3rem 1rem;}
       .stat + .stat{border-left:none;border-top:1px solid var(--line);}
       .form-row{grid-template-columns:1fr;gap:0;}
@@ -440,6 +451,7 @@
         <a href="#servicos">Serviços</a>
         <a href="calculadora.html">Calculadora</a>
         <a href="guia-cnpj.html">Guia do CNPJ</a>
+        <!-- BLOG:NAV --><!-- /BLOG:NAV -->
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -462,6 +474,7 @@
     <a href="#servicos">Serviços</a>
     <a href="calculadora.html">Calculadora do Simples</a>
     <a href="guia-cnpj.html">Guia do CNPJ</a>
+    <!-- BLOG:NAV --><!-- /BLOG:NAV -->
     <a href="#duvidas">Dúvidas</a>
     <a href="#contato">Contato</a>
     <a class="btn btn-outline" href="https://onvio.com.br" target="_blank" rel="noopener">Área do cliente (Onvio)</a>
@@ -600,6 +613,9 @@
           </div>
         </div>
         <p class="services-note reveal" id="servicos-nota">Não encontrou o que precisa? <a href="https://wa.me/5549998400684?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Prospera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Fale com a Prospera no WhatsApp</a> — cada negócio é único e a gente monta o atendimento certo.</p>
+        <!-- RAMOS:SERVICOS -->
+        <p class="services-note reveal">Atendimento especializado para: <a href="/contabilidade-para-profissional-pj.html">Profissional PJ</a> · <a href="/contabilidade-para-saude.html">Saúde</a> · <a href="/contabilidade-para-engenharia-e-arquitetura.html">Engenharia e arquitetura</a> · <a href="/contabilidade-para-ti-marketing-e-consultoria.html">TI, marketing e consultoria</a>.</p>
+        <!-- /RAMOS:SERVICOS -->
       </div>
     </section>
 
@@ -705,6 +721,9 @@
       </div>
     </section>
     ======================= FIM PACOTES ======================= -->
+
+    <!-- Seção "Novidades" (3 últimos posts) — preenchida pelo _scripts/build.mjs -->
+    <!-- BLOG:NOVIDADES --><!-- /BLOG:NOVIDADES -->
 
     <!-- ======================= FAQ ======================= -->
     <section class="section" id="duvidas" style="background:var(--paper-2);">
@@ -812,7 +831,7 @@
             <textarea id="pObs" name="obs"></textarea>
           </div>
           <button class="btn btn-wa" type="submit">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
             Enviar pelo WhatsApp
           </button>
           <p class="form-note">Seus dados não ficam guardados no site: eles vão direto para a conversa no WhatsApp da Prospera.</p>
@@ -880,8 +899,18 @@
           <a href="#contato">Contato</a>
           <a href="calculadora.html">Calculadora do Simples</a>
           <a href="guia-cnpj.html">Guia do CNPJ</a>
+          <!-- BLOG:NAV --><!-- /BLOG:NAV -->
           <a href="https://onvio.com.br" target="_blank" rel="noopener">Área do cliente (Onvio)</a>
         </div>
+        <!-- RAMOS:RODAPE -->
+        <div class="foot-col">
+          <h4>Para quem atendemos</h4>
+          <a href="/contabilidade-para-profissional-pj.html">Profissional PJ</a>
+          <a href="/contabilidade-para-saude.html">Saúde</a>
+          <a href="/contabilidade-para-engenharia-e-arquitetura.html">Engenharia e arquitetura</a>
+          <a href="/contabilidade-para-ti-marketing-e-consultoria.html">TI, marketing e consultoria</a>
+        </div>
+        <!-- /RAMOS:RODAPE -->
         <div class="foot-col">
           <h4>Contato</h4>
           <a href="https://wa.me/5549998400684" target="_blank" rel="noopener">(49) 99840-0684</a>
@@ -944,6 +973,12 @@
 
     // Formulário "Peça uma proposta": monta a mensagem e abre o WhatsApp (nada é guardado no site)
     const formProposta = document.getElementById('formProposta');
+    // Link vindo de uma página "Contabilidade para…" (/?ramo=Saúde#proposta) já escolhe o ramo
+    const ramoUrl = new URLSearchParams(location.search).get('ramo');
+    if (ramoUrl) {
+      const sel = document.getElementById('pRamo');
+      if ([...sel.options].some(o => o.value === ramoUrl)) sel.value = ramoUrl;
+    }
     formProposta.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const v = (id) => document.getElementById(id).value.trim();
