@@ -16,8 +16,7 @@ serviço no Simples Nacional.
 - **`guia-cnpj.html`** — Guia do CNPJ: 7 temas educativos para quem abriu empresa.
 - **`contabilidade-para-*.html`** — páginas por ramo: profissional PJ, saúde, engenharia e
   arquitetura, TI/marketing/consultoria. *(geradas)*
-- **`blog/`** — blog com posts sobre contabilidade e impostos. *(gerado; entra no ar com o
-  primeiro post aprovado)*
+- **`blog/`** — blog com posts sobre contabilidade e impostos (no ar desde 23/10/2026). *(gerado)*
 
 ## Como funciona
 

@@ -192,8 +192,9 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 - **Tarefa agendada semanal** "Blog semanal da Prospera" (id `trig_01K3GpzZqcZoDNr4oyApcu5G`):
   toda **segunda às 7h38 (Brasília)** abre uma sessão nova que pesquisa as novidades, escreve
   1 post, roda o build e abre (ou acrescenta ao) PR pendente. Avisa o dono por push/e-mail.
-- **PR #1** (`blog/primeiros-posts`, 23/10/2026): estrutura do blog + 3 posts (NFS-e Nacional
-  em 1º/11/2026, lucros acima de R$ 50 mil, Fator R) — aguardando aprovação.
+- **Blog no ar desde 23/10/2026** (PR #1 aprovado pelo dono e mesclado): 3 posts — NFS-e
+  Nacional em 1º/11/2026, lucros acima de R$ 50 mil, Fator R. O link "Blog" e a seção
+  "Novidades" da home já aparecem.
 
 ---
 
@@ -228,7 +229,7 @@ tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
 
 ## 10. Pendências (23/10/2026)
 
-- Aprovar (Merge) o **PR #1** do blog.
+- Ler e aprovar (Merge) os PRs semanais "Blog: …" (primeiro em 26/10/2026).
 - Criar a conta do **GoatCounter** (código `prosperacontabil`).
 - Cadastrar o site no **Google Search Console** (enviar `https://prospera-contabil.com/sitemap.xml`)
   e criar/atualizar o **Perfil da Empresa no Google** (avaliações).
