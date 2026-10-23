@@ -4,60 +4,75 @@
 > repositório. Leia-o no início de cada sessão. O dono do projeto é **iniciante
 > em programação** e se comunica em **português (PT-BR)** — explique tudo de
 > forma simples e trabalhe com calma.
+>
+> 📌 **Regra permanente para os agentes:** a cada mudança no código ou no conteúdo,
+> **atualize este CLAUDE.md e o README.md no mesmo commit (ou no commit seguinte)**,
+> para que eles sempre reflitam o estado atual do site. Faça commits pequenos e
+> frequentes. Este é um projeto pessoal do dono: pode dar push direto na `main`
+> (exceto posts do blog, que vão por PR — ver seção 7).
+
+> 🆕 **23/10/2026 — grande atualização (comparação com o site da Contplan):**
+> nome padronizado **"Prospera Consultoria Contábil"** (igual ao CNPJ); rodapé com
+> CNPJ e CRC das responsáveis técnicas; botão **Área do cliente** → Portal do Cliente
+> do Onvio (`https://onvio.com.br`); prévia de link no WhatsApp/redes (`og:image`) +
+> dados estruturados para o Google + `robots.txt`/`sitemap.xml`; contador de visitas
+> **GoatCounter** (sem cookies); home com **faixa de destaques**, seção **Tecnologia**,
+> formulário **"Peça uma proposta"** (abre o WhatsApp); calculadora com botão
+> **"Enviar esta simulação"** e a regra dos **lucros acima de R$ 50 mil/mês**;
+> **4 páginas "Contabilidade para…"**; **gerador do site** (`_scripts/build.mjs`) e
+> **blog** com post semanal automático em **rascunho + aprovação** (PR).
+> Correção: o topo da home ficava em branco para quem usa "reduzir movimento".
 
 ---
 
 ## 1. O que é este projeto
 
-Site institucional da **Prospera Assessoria e Consultoria Contábil**, um
-escritório de contabilidade de **Capinzal/SC** focado em prestadores de serviço
-no Simples Nacional.
+Site institucional da **Prospera Consultoria Contábil** (razão social: Prospera
+Consultoria Contábil Ltda, CNPJ 58.525.311/0001-54), escritório de contabilidade de
+**Capinzal/SC** focado em prestadores de serviço no Simples Nacional.
 
-- **Repositório:** `Boaretto-JAB/prospera-landing` (GitHub)
-- **Hospedagem:** GitHub Pages (publicação automática a cada `git push` na branch `main`)
-- **Domínio:** https://prospera-contabil.com (HTTPS ativo; arquivo `CNAME` define o domínio)
-- **Sem etapa de build:** cada página é um arquivo `.html` único e autocontido
-  (CSS e JavaScript embutidos no próprio arquivo; logo e favicon embutidos em base64).
-
-Depois de um `git push`, o GitHub Pages publica sozinho em **~1 minuto**. Não há
-outro passo de deploy.
+- **Repositório:** `Boaretto-JAB/prospera-landing` (GitHub, público)
+- **Hospedagem:** GitHub Pages (publicação automática a cada `git push` na `main`, ~1 min)
+- **Domínio:** https://prospera-contabil.com (arquivo `CNAME`)
+- O GitHub Pages roda o Jekyll por padrão: arquivos/pastas que começam com `_` **não**
+  são publicados, e o `_config.yml` tira `CLAUDE.md` e `README.md` do site.
+- **Não há build no servidor.** As páginas geradas (ramos e blog) são produzidas
+  **localmente** por `node _scripts/build.mjs` e commitadas junto com o `.md`.
 
 ---
 
 ## 2. Arquivos do repositório
 
-| Arquivo | O que é |
-|---|---|
-| `index.html` | Landing page principal (~676 linhas). |
-| `calculadora.html` | Calculadora do Simples Nacional para prestadores de serviço (~351 linhas). |
-| `guia-cnpj.html` | Página "Guia do CNPJ" — conteúdo educativo para quem abriu empresa (~236 linhas). |
-| `CNAME` | Contém `prospera-contabil.com` (config do domínio no GitHub Pages). |
-| `CLAUDE.md` | Este arquivo (memória do projeto). |
-| `README.md` | Resumo curto do projeto. |
+| Arquivo / pasta | O que é | Edita como? |
+|---|---|---|
+| `index.html` | Home (landing). | À mão — **exceto** os trechos entre marcadores `<!-- BLOG:… -->` / `<!-- RAMOS:… -->`, que o build reescreve. |
+| `calculadora.html` | Calculadora do Simples Nacional. | À mão. |
+| `guia-cnpj.html` | Guia do CNPJ (7 temas educativos). | À mão. |
+| `contabilidade-para-*.html` | 4 páginas de ramo. | **Geradas** — edite `_conteudo/ramos/*.md` e rode o build. |
+| `blog/` | Lista do blog, posts e `feed.xml`. | **Gerados** — edite `_conteudo/blog/*.md` e rode o build. |
+| `sitemap.xml` | Mapa do site para o Google. | **Gerado** pelo build. |
+| `robots.txt` | Libera o site para buscadores e aponta o sitemap. | À mão (raramente). |
+| `assets/` | `logo.png`, `favicon.png` (extraídos do base64, mesmos bytes), `og-image.jpg` (1200×630, prévia de link), `pagina.css`/`pagina.js` (páginas geradas), `contador.js` (cliques). | À mão. |
+| `_conteudo/ramos/` | Textos das páginas "Contabilidade para…" (Markdown + cabeçalho). | À mão. |
+| `_conteudo/blog/` | Posts do blog (`AAAA-MM-DD-endereco.md`). | À mão / tarefa semanal. |
+| `_conteudo/GUIA-EDITORIAL-BLOG.md` | Regras de escrita e exatidão do blog, formato e pauta. | À mão. |
+| `_conteudo/rascunhos/pacotes.md` | Rascunho dos pacotes (decisões pendentes das sócias). | À mão. |
+| `_modelos/pagina.html` | Modelo (topo, menu, rodapé) das páginas geradas. | À mão + rodar build. |
+| `_scripts/build.mjs` | Gerador. `_scripts/vendor/marked.esm.js` = conversor de Markdown (marked 15.0.12, MIT). | À mão. |
+| `_config.yml` | Exclusões do Jekyll/GitHub Pages. | Cuidado: YAML inválido derruba a publicação. |
+| `CNAME`, `CLAUDE.md`, `README.md` | Domínio e documentação. | À mão. |
 
 ### ⚠️ Linhas de base64 (NÃO editar)
-O logo e o favicon estão embutidos como base64 em **linhas únicas muito longas**.
-**Nunca recrie nem recodifique esse base64** — preserve exatamente como está.
-Ao ler os arquivos, pule essas linhas para economizar contexto:
+O logo e o favicon das 3 páginas feitas à mão estão embutidos como base64 em
+**linhas únicas muito longas**. **Nunca recrie nem recodifique esse base64.**
+Posições atuais (deslizam quando o arquivo muda — confirme com
+`awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
-- `index.html`: linha **10** (favicon), linhas **351** e **407** (logo)
-  — ⚠️ essas posições deslizam quando o arquivo é editado; confirme com
-  `awk '{ if (length($0) > 900) print NR }' index.html` antes de confiar nelas
-- `calculadora.html`: linha **8** (favicon), linha **120** (logo)
-- `guia-cnpj.html`: linha **8** (favicon), linha **109** (logo)
+- `index.html`: linha **10** (favicon), **447** e **509** (logo) — 1014 linhas no total
+- `calculadora.html`: linha **19** (favicon), **146** (logo) — 417 linhas
+- `guia-cnpj.html`: linha **19** (favicon), **124** (logo) — 253 linhas
 
-### Página Guia do CNPJ (`guia-cnpj.html`)
-Conteúdo educativo, no mesmo padrão visual do site. Foi **gerada** reaproveitando o
-favicon e o logo da `calculadora.html` (extraídos por script, para não recriar o
-base64). Tem um índice + **7 temas** do manual de boas-vindas: (01) pró-labore ×
-distribuição de lucros — com link para a calculadora, (02) golpes/boletos falsos,
-(03) avisar antes de mudar a empresa, (04) como/quando se paga o Simples (o DAS),
-(05) notas fiscais, (06) certificado digital (e-CNPJ), (07) guarda de documentos por
-5 anos. Para editar, abra o arquivo e pule as linhas de base64 (8 e 109).
-
-**Acesso:** o Guia está no **menu** (desktop e mobile, após "Calculadora do Simples"),
-no **rodapé** e ao **final da seção "Dúvidas"** da home. A calculadora também está no
-rodapé.
+As páginas **geradas** usam `/assets/logo.png` e `/assets/favicon.png` (mesma imagem).
 
 ---
 
@@ -65,107 +80,165 @@ rodapé.
 
 Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 
-- **Fontes (Google Fonts):**
-  - `Cinzel` → wordmark/títulos da marca (estilo Trajan da logo)
-  - `Cormorant Garamond` → títulos display e textos em itálico
-  - `EB Garamond` → corpo do texto
-- **Cores (variáveis CSS `:root`):**
-  - navy `#12436C`, navy-deep `#0E3556`, navy-soft `#1C5586`
-  - ink `#16181D`, paper/marfim `#F7F4EE`, branco `#FFFFFF`
-  - linha `#E2DCCF`, WhatsApp `#25D366`
-- **Logo:** símbolo de dois triângulos entrelaçados (marinho + preto), em base64.
-- Sempre **responsivo** (mobile-first), **acessível** e com **animações suaves**
-  que respeitam `prefers-reduced-motion`.
+- **Fontes (Google Fonts):** `Cinzel` (marca/rótulos), `Cormorant Garamond` (títulos),
+  `EB Garamond` (corpo).
+- **Cores:** navy `#12436C`, navy-deep `#0E3556`, navy-soft `#1C5586`, ink `#16181D`,
+  paper/marfim `#F7F4EE`, branco `#FFFFFF`, linha `rgba(22,24,29,.13)`, WhatsApp `#25D366`.
+- **Ícone do WhatsApp:** use o caminho SVG **longo** (logo completo, ~894 caracteres, igual
+  ao do botão do topo da home). O caminho curto (~695) vira uma bolha cheia.
+- Sempre **responsivo**, **acessível** e com animações que respeitam
+  `prefers-reduced-motion` (na home, `.hero .anim` precisa de `opacity:1` nesse modo —
+  sem isso o topo some).
 
 ---
 
 ## 4. Estrutura da `index.html`
 
-- **Header fixo** com navegação alinhada à direita: Início, Sobre, Serviços, Calculadora do Simples, Guia do CNPJ, Dúvidas, Contato. Vira opaco ao rolar (`.scrolled`). Com 7 itens, vira **menu mobile (hambúrguer) em telas ≤1100px** (regra separada do breakpoint de 980px, que cuida do layout do hero/serviços). O WhatsApp fica **só no botão flutuante** (canto inferior direito), não no header.
-- **Hero:** headline _"Tecnologia e experiência transformando números em sucesso."_ + placa da marca.
-- **Sobre (01):** texto de apresentação (inclui os sócios com **mais de 15 anos cada** em contábil, fiscal, departamento pessoal, gestão financeira e controladoria) + 3 pilares: **Tecnologia** (destaca os **agentes de IA** — conferência de cálculos, automação, controle de CNDs, notas fiscais, auditorias), **Experiência**, **Sucesso**. _Ideia futura do dono: uma página dedicada aos fundadores/equipe._
-- **Serviços (02):** 6 cards (Contabilidade; Fiscal e Tributário; Departamento Pessoal; Abertura e Regularização; Planejamento Tributário; Consultoria Financeira).
-- **FAQ / Dúvidas (03):** 6 perguntas em acordeão. Ao final, um link para o **Guia do CNPJ** (usa a classe `.services-note`). Obs.: os temas pró-labore × lucros, golpes/boletos e mudanças na empresa **saíram do FAQ** e viraram seções do Guia (para não duplicar). Links dentro das respostas usam a regra `.faq-a a`.
-- **Contato:** painel marinho com CTA + cartão de contatos.
-- **Footer** + **botão flutuante de WhatsApp**.
-- **JavaScript no fim:** ano automático no rodapé, header ao rolar, menu mobile, acordeão do FAQ e animações de entrada (`IntersectionObserver`, respeitando `prefers-reduced-motion`).
+- **Header fixo**: logo + menu (Sobre, Serviços, Calculadora, Guia do CNPJ, [Blog],
+  Dúvidas, Contato) + botão **Área do cliente** (Onvio). Menu vira hambúrguer em ≤1100px;
+  o botão Área do cliente some em ≤760px (fica no menu do celular).
+- **Hero**: headline + botões "Falar no WhatsApp" e "Peça uma proposta" (`#proposta`).
+- **Faixa de destaques**: 15+ anos de experiência de cada sócia · 4 estados com clientes ·
+  100% digital. (As sócias **não** querem mostrar o número de empresas por enquanto.)
+- **01 Sobre** (texto fala em "as sócias") + 3 pilares.
+- **02 Serviços**: 6 cards + `<!-- RAMOS:SERVICOS -->` (links das páginas de ramo).
+- **03 Tecnologia a seu favor** (`#tecnologia`): Caixa Postal/DCTFWeb, certidões,
+  certificado/procuração, emissor NFS-e, conferência com IA, Portal do Cliente.
+  Só afirme o que de fato roda nos sistemas da Prospera.
+- **Depoimentos** e **Pacotes**: blocos prontos, **comentados (fora do ar)**. Para publicar,
+  ver as instruções dentro de cada comentário (pacotes: `_conteudo/rascunhos/pacotes.md`).
+- `<!-- BLOG:NOVIDADES -->`: 3 posts mais recentes (só aparece quando há posts).
+- **04 Dúvidas** (FAQ em acordeão) + link para o Guia.
+- **05 Proposta** (`#proposta`): formulário (nome, situação, ramo, faturamento, funcionários,
+  cidade, observação) que **monta a mensagem e abre o WhatsApp** — nada é guardado.
+  `/?ramo=Saúde#proposta` já escolhe o ramo (usado pelas páginas de ramo).
+- **Contato** (painel marinho) + **Footer** (4 colunas: marca, navegação, "Para quem
+  atendemos" via `<!-- RAMOS:RODAPE -->`, contato) + linha legal com CNPJ e CRC.
+- **JavaScript no fim**: ano, header ao rolar, menu mobile, FAQ, formulário de proposta,
+  animações.
 
-### Dados de contato usados no site (manter consistentes)
+### Dados de contato e legais (manter consistentes em todas as páginas)
 - **WhatsApp:** (49) 99840-0684 → `https://wa.me/5549998400684`
-- **E-mail:** contato@prospera-contabil.com
-- **Instagram:** @prospera.contabil → `https://instagram.com/prospera.contabil`
-- **Endereço:** Rua João Caldart, 129 – Apto. 302, Capinzal/SC
-- **Horário:** Segunda a sexta, das 8h às 18h
-
-> **Navegação para a calculadora:** o menu (desktop e mobile) tem o item
-> **"Calculadora do Simples"**, logo após "Serviços", apontando para `calculadora.html`.
+- **E-mail:** contato@prospera-contabil.com · **Instagram:** @prospera.contabil
+- **Endereço:** Rua João Caldart, 129 – Apto. 302, Centro, Capinzal/SC, CEP 89665-000
+- **Horário:** segunda a sexta, das 8h às 18h
+- **Razão social / CNPJ:** Prospera Consultoria Contábil Ltda · 58.525.311/0001-54
+- **Responsáveis técnicas:** Solange C. F. Boaretto — CRC/SC 040604/O-4 ·
+  Taynara M. Bugança — CRC/SC 047426/O (a empresa não tem nº próprio informado)
+- **Área do cliente:** Portal do Cliente do Onvio → `https://onvio.com.br`
 
 ---
 
 ## 5. Calculadora (`calculadora.html`) — regras fiscais
 
-Calcula, a partir de poucos campos, o **DAS**, o **pró-labore líquido** e quanto
-**sobra para o sócio**. Resultado atualiza em tempo real (evento `input`).
-Todo o cálculo está num `<script>` no fim do arquivo. Valores **vigentes em 2026**.
-
-**Campos do formulário:** abrem **em branco** (placeholder `0,00`); campo vazio
-é tratado como **zero** no cálculo, então a página inicia com tudo "R$ 0,00".
-O botão de Anexo (III/V) inicia em **III**.
-- Faturamento mensal médio
-- Pró-labore bruto _(dica no campo: mínimo 1 salário, R$ 1.621,00)_
-- Folha de funcionários (salário base)
-- Despesas diversas
+Calcula o **DAS**, o **pró-labore líquido** e quanto **sobra para o sócio**, em tempo real.
+Valores **vigentes em 2026**. Campos abrem em branco (vazio = zero); Anexo começa em III.
 
 **Fórmulas (não quebrar):**
-- **DAS** = faturamento do mês × **alíquota efetiva**
-- **Alíquota efetiva** = (RBT12 × alíquota nominal − parcela a deduzir) ÷ RBT12
-- **RBT12** = faturamento mensal × 12
-- **Tabelas Anexos III e V (2026)** estão no JS (`ANEXO_III`, `ANEXO_V`).
-- **Fator R** = (pró-labore + folha + encargos) ÷ faturamento.
-  No **Anexo V**, se **Fator R ≥ 28%**, a tributação migra para o **Anexo III**
-  (mais barato). Anexo III escolhido permanece III.
-- **INSS pró-labore:** 11%, teto **R$ 8.475,55** (máx R$ 932,31).
-- **IRPF (Lei 15.270/2025):**
-  - isento até **R$ 5.000/mês**;
-  - de R$ 5.000,01 a R$ 7.350 → redutor = `978,62 − 0,133145 × rendimento`;
-  - acima de R$ 7.350 → tabela progressiva cheia (`TABELA_IR`).
-- **Encargos da folha ≈ 29%** (FGTS 8% + 13º + férias + 1/3 + FGTS sobre provisões).
+- **DAS** = faturamento × alíquota efetiva; **efetiva** = (RBT12 × nominal − dedução) ÷ RBT12;
+  **RBT12** = faturamento × 12. Tabelas `ANEXO_III`/`ANEXO_V` no JS.
+- **Fator R** = (pró-labore + folha + encargos) ÷ faturamento. No Anexo V, Fator R ≥ 28% →
+  tributa pelo Anexo III.
+- **INSS pró-labore:** 11%, teto R$ 8.475,55. **IRPF (Lei 15.270/2025):** isento até
+  R$ 5.000; redutor `978,62 − 0,133145 × rendimento` até R$ 7.350; acima, tabela cheia.
+- **Encargos da folha ≈ 29%.**
+- **Lucros (Lei 15.270/2025):** isentos até **R$ 50 mil/mês** por sócio; acima disso,
+  **retenção de 10% sobre o total** (`LIMITE_LUCRO_ISENTO`, `ALIQ_IRRF_LUCRO`) — posição da
+  Receita, tema em discussão judicial; aparece um aviso. Considera um único sócio.
+- **Botão "Enviar esta simulação"** (`#waSimulacao`): monta a mensagem do WhatsApp com os
+  números da tela (função `atualizarWhatsApp`).
 
-**Conferência (cenário de teste, já validado):** digitando faturamento R$ 27.000,
-Anexo III, pró-labore R$ 1.621, folha R$ 0 e despesas R$ 350
-→ **DAS R$ 2.244,00** (alíquota 8,3111%) e **líquido ao sócio R$ 24.227,69**.
-_(Sem despesas, o líquido seria R$ 24.577,69.)_ Use este caso para revalidar a
-lógica depois de mexer no JS.
+**Conferência (revalidar depois de mexer no JS):**
+- R$ 27.000, Anexo III, pró-labore R$ 1.621, folha 0, despesas R$ 350 → **DAS R$ 2.244,00**
+  (8,3111%) e **líquido R$ 24.227,69** (sem despesas: R$ 24.577,69).
+- R$ 100.000, Anexo III, pró-labore R$ 1.621 → lucro R$ 85.349,00, **retenção R$ 8.534,90**,
+  **líquido R$ 78.256,79**.
 
-> ⚠️ **IMPORTANTE:** esses números mudam por ano e por lei. **Antes de alterar
-> QUALQUER valor fiscal**, pesquise e confirme a regra vigente e **informe a fonte**
-> ao dono. Mantenha sempre o aviso de _"estimativa, não substitui a apuração oficial"_.
-> Depois de mexer no JS da calculadora, **revalide** a lógica com o exemplo de conferência.
+> ⚠️ Esses números mudam por ano e por lei. **Antes de alterar qualquer valor fiscal**,
+> pesquise a regra vigente e **informe a fonte** ao dono. Mantenha o aviso de
+> "estimativa, não substitui a apuração oficial".
 
 ---
 
-## 6. Como trabalhar (fluxo a cada pedido)
+## 6. Páginas geradas e o build
 
-1. Edite o **arquivo certo** (`index.html` ou `calculadora.html`).
-2. Faça um **commit pequeno** com mensagem clara em português, usando prefixo:
-   - `feat:` (novidade), `fix:` (correção), `content:` (texto/conteúdo), `style:` (visual).
-3. `git push` na branch **main**.
-4. Avise o dono **o que mudou**; o GitHub Pages publica em ~1 min.
+```bash
+node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm install)
+```
 
-**Nunca:**
-- Quebrar o base64 do logo/favicon.
-- Quebrar o design ou a responsividade.
-- Tocar em **DNS**, **e-mail (Google Workspace)** ou configurações da conta do GitHub.
-
-**Sempre:**
-- Validar a lógica da calculadora depois de mexer nela.
-- Explicar as mudanças de forma simples (dono é iniciante).
-- Só alterar o que foi pedido.
+- Lê `_conteudo/ramos/*.md` e `_conteudo/blog/AAAA-MM-DD-*.md`, aplica `_modelos/pagina.html`
+  e grava: `contabilidade-para-*.html`, `blog/` (posts, lista e `feed.xml`), `sitemap.xml` e
+  os trechos marcados do `index.html` (`BLOG:NAV`, `BLOG:NOVIDADES`, `RAMOS:SERVICOS`,
+  `RAMOS:RODAPE`). Apaga páginas geradas cujo `.md` sumiu.
+- **Valida** os `.md` (campos obrigatórios, data, categoria, resumo ≤ 170 caracteres,
+  seção `## Fontes` nos posts) e **não grava nada** se houver erro (mostra ❌ e a lista).
+- O link **"Blog"** no menu e a seção **Novidades** só aparecem quando existe pelo menos 1 post.
+- Cabeçalho das páginas de ramo: `titulo`, `titulo_seo`, `resumo`, `menu`, `ordem`,
+  `eyebrow`, `mensagem_whatsapp`, `ramo_formulario` (tem que ser igual a uma opção do
+  campo "Ramo" do formulário da home).
+- Páginas de ramo atuais: Profissional PJ (exemplo do Fator R: R$ 15 mil/mês → +R$ 1.141,31),
+  Saúde, Engenharia e arquitetura, TI/marketing/consultoria.
 
 ---
 
-## 7. Ambiente local
+## 7. Blog (rascunho + aprovação)
 
-- Repositório clonado em: `~/Projetos/prospera-landing`
-- `git` e `gh` (GitHub CLI) instalados; já autenticado como `Boaretto-JAB`.
-- Para testar localmente, basta abrir o `.html` no navegador (não precisa de servidor).
+- **Regras de escrita:** `_conteudo/GUIA-EDITORIAL-BLOG.md` (fontes oficiais obrigatórias,
+  categorias, formato, pauta). Nunca citar clientes nem dados internos.
+- **Posts NUNCA vão direto para a `main`.** Ficam numa branch `blog/…` com um **Pull Request
+  "Blog: …"**; as sócias leem e clicam em **Merge** para publicar (~1 min).
+  Cuidado com `git add -A` em outra branch enquanto há posts não commitados na pasta — foi
+  assim que, em 23/10, 3 posts escaparam para a `main` por alguns minutos.
+- **Tarefa agendada semanal** "Blog semanal da Prospera" (id `trig_01K3GpzZqcZoDNr4oyApcu5G`):
+  toda **segunda às 7h38 (Brasília)** abre uma sessão nova que pesquisa as novidades, escreve
+  1 post, roda o build e abre (ou acrescenta ao) PR pendente. Avisa o dono por push/e-mail.
+- **PR #1** (`blog/primeiros-posts`, 23/10/2026): estrutura do blog + 3 posts (NFS-e Nacional
+  em 1º/11/2026, lucros acima de R$ 50 mil, Fator R) — aguardando aprovação.
+
+---
+
+## 8. Contador de visitas (GoatCounter)
+
+- Script em todas as páginas: `https://prosperacontabil.goatcounter.com/count` (grátis, sem
+  cookies → não precisa de aviso de cookies). `assets/contador.js` registra cliques no
+  WhatsApp (`whatsapp`) e na Área do cliente (`area-do-cliente`); o formulário registra
+  `proposta-enviada`.
+- ⚠️ **Pendente do dono:** criar a conta em goatcounter.com com o código **`prosperacontabil`**
+  (se o código estiver ocupado, trocar nas 3 páginas, no `_modelos/pagina.html` e aqui).
+
+---
+
+## 9. Como trabalhar (fluxo a cada pedido)
+
+1. Edite o arquivo certo (manual ou `.md` + build — ver tabela da seção 2).
+2. Rode `node _scripts/build.mjs` se mexeu em `_conteudo/`, `_modelos/` ou no build.
+3. Confira no navegador (as páginas geradas usam caminhos `/assets/…`, então use um
+   servidor local: `npx serve .`).
+4. **Commit pequeno** em português com prefixo `feat:` / `fix:` / `content:` / `style:` /
+   `docs:` / `blog:`, e `git push` na `main` (blog: branch + PR).
+5. **Atualize este CLAUDE.md e o README.md.**
+6. Avise o dono **o que mudou**.
+
+**Nunca:** quebrar o base64; editar à mão um `.html` gerado; publicar post sem aprovação;
+tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
+
+**Sempre:** validar a calculadora depois de mexer no JS; explicar as mudanças de forma simples.
+
+---
+
+## 10. Pendências (23/10/2026)
+
+- Aprovar (Merge) o **PR #1** do blog.
+- Criar a conta do **GoatCounter** (código `prosperacontabil`).
+- Cadastrar o site no **Google Search Console** (enviar `https://prospera-contabil.com/sitemap.xml`)
+  e criar/atualizar o **Perfil da Empresa no Google** (avaliações).
+- **Depoimentos:** as sócias vão reunir 3–5 (com autorização) → publicar o bloco comentado.
+- **Pacotes:** decidir nomes, preço no site ou não, extras e limites (`_conteudo/rascunhos/pacotes.md`).
+- **Página Quem somos/Equipe** (fundadoras, CRC, trajetória) — para depois.
+
+---
+
+## 11. Ambiente local
+
+- Repositório clonado em: `~/Projetos/prospera-landing` (no Mac do dono).
+- `git` e `gh` instalados; autenticado como `Boaretto-JAB`. Node 18+ para o build.
