@@ -112,6 +112,17 @@
   .chip.no{background:rgba(201,138,43,.2);color:#f0c483;border:1px solid rgba(201,138,43,.5);}
   .chip.neutral{background:rgba(255,255,255,.1);color:#cfdcea;border:1px solid rgba(255,255,255,.25);}
 
+  .nota-lucro{margin-top:1rem;padding:.75rem .9rem;border-radius:3px;background:rgba(201,138,43,.16);border:1px solid rgba(201,138,43,.45);font-size:.84rem;line-height:1.5;color:#f3d7a8;}
+  .nota-lucro[hidden]{display:none;}
+
+  /* chamada para enviar a simulação no WhatsApp */
+  .wa-cta{margin-top:1.2rem;background:var(--paper-3);border:1px solid var(--line);border-radius:4px;padding:1.1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .wa-cta p{font-family:var(--serif-display);font-weight:600;font-size:1.15rem;color:var(--navy);line-height:1.25;max-width:24ch;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--serif-body);font-size:.92rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.8em 1.3em;border:1px solid transparent;border-radius:2px;cursor:pointer;transition:all .25s ease;}
+  .btn svg{width:18px;height:18px;flex:none;}
+  .btn-wa{background:var(--wa);color:#0a3d23;border-color:var(--wa);}
+  .btn-wa:hover{background:#1ec25b;transform:translateY(-2px);}
+
   .disc{font-size:.8rem;color:var(--ink-faint);margin-top:1.2rem;line-height:1.5;}
   .disc a{color:var(--navy);border-bottom:1px solid rgba(18,67,108,.3);}
 
@@ -226,7 +237,7 @@
           <div class="node node-soc">
             <div class="t">Distribuição de lucros</div>
             <div class="v" id="oLucro">R$ 0,00</div>
-            <div class="d">isento de IR</div>
+            <div class="d" id="oLucroInfo">isento de IR até R$ 50 mil/mês</div>
           </div>
           <div class="connector"></div>
           <div class="node node-soc node-total">
@@ -239,9 +250,18 @@
             <span id="oFatorR">Fator R: 0,0%</span>
             <span class="chip" id="oFatorChip">—</span>
           </div>
+          <p class="nota-lucro" id="oNotaLucro" hidden>Acima de <b>R$ 50 mil no mês</b> para o mesmo sócio, a Receita Federal entende que há <b>retenção de 10% sobre o total</b> distribuído (Lei 15.270/2025) — tema ainda em discussão na Justiça. O cálculo considera um único sócio; com mais sócios, o limite vale para cada um.</p>
         </div>
 
-        <p class="disc">Estimativa para fins de planejamento, com base nas tabelas vigentes em 2026 (Anexos III e V, INSS e a nova regra do IRPF — Lei 15.270/2025). Não substitui a apuração oficial feita pela sua contabilidade. Dúvidas? <a href="/#contato">Fale com a Prospera</a>.</p>
+        <div class="wa-cta">
+          <p>Quer que a Prospera confira esses números?</p>
+          <a class="btn btn-wa" id="waSimulacao" href="https://wa.me/5549998400684" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+            Enviar esta simulação
+          </a>
+        </div>
+
+        <p class="disc">Estimativa para fins de planejamento, com base nas tabelas vigentes em 2026 (Anexos III e V, INSS, a nova regra do IRPF e a retenção sobre lucros acima de R$ 50 mil/mês — Lei 15.270/2025). Não substitui a apuração oficial feita pela sua contabilidade. Dúvidas? <a href="/#contato">Fale com a Prospera</a>.</p>
       </section>
     </div>
   </main>
@@ -259,6 +279,8 @@
 (function(){
   "use strict";
   var SAL_MIN=1621.00, TETO_INSS=8475.55;
+  var LIMITE_LUCRO_ISENTO=50000, ALIQ_IRRF_LUCRO=0.10; // Lei 15.270/2025: acima de R$ 50 mil/mês ao mesmo sócio, 10% sobre o total
+  var WA_NUMERO='5549998400684';
   var ANEXO_III=[[180000,0.06,0],[360000,0.112,9360],[720000,0.135,17640],[1800000,0.16,35640],[3600000,0.21,125640],[4800000,0.33,648000]];
   var ANEXO_V =[[180000,0.155,0],[360000,0.18,4500],[720000,0.195,9900],[1800000,0.205,17100],[3600000,0.23,62100],[4800000,0.305,540000]];
   var TABELA_IR=[[2259.20,0,0],[2826.65,0.075,169.44],[3751.05,0.15,381.44],[4664.68,0.225,662.77],[Infinity,0.275,896.00]];
@@ -306,7 +328,8 @@
     var a=aliquotaEfetiva(rbt12, anexoEf==='III'?ANEXO_III:ANEXO_V);
     var das=fat*a.ef;
     var lucro=fat-das-pl-folhaTot-desp;
-    var liquido=lucro+plLiq;
+    var irrfLucro=lucro>LIMITE_LUCRO_ISENTO?lucro*ALIQ_IRRF_LUCRO:0;
+    var liquido=lucro-irrfLucro+plLiq;
 
     set('oFat',brl.format(fat));
     set('oDas','− '+brl.format(das));
@@ -323,7 +346,10 @@
     else bDesp.style.display='none';
 
     set('oLucro',brl.format(lucro));
+    set('oLucroInfo',irrfLucro>0?'retenção de 10% na fonte: − '+brl.format(irrfLucro):'isento de IR até R$ 50 mil/mês');
+    document.getElementById('oNotaLucro').hidden=!(irrfLucro>0);
     set('oLiquido',brl.format(liquido));
+    atualizarWhatsApp({fat:fat,pl:pl,sal:sal,desp:desp,anexoEf:anexoEf,fatorR:fatorR,das:das,aliq:a.ef,irrfLucro:irrfLucro,liquido:liquido});
 
     set('oFatorR','Fator R: '+pct(fatorR)+' (folha ÷ faturamento)');
     var chip=document.getElementById('oFatorChip');
@@ -343,6 +369,30 @@
         av.innerHTML='<span>⚠️</span><span><b>Fator R de '+pct(fatorR)+' (abaixo de 28%).</b> No Anexo V a tributação é mais alta. Faltam cerca de <b>'+brl.format(falta)+'/mês</b> em folha/pró-labore para atingir 28% e migrar ao <b>Anexo III</b>. Fale com a Prospera.</span>';
       }
     }
+  }
+
+  // Monta a mensagem do botão "Enviar esta simulação" com os números da tela
+  function atualizarWhatsApp(r){
+    var txt;
+    if(r.fat<=0){
+      txt='Olá! Vim pela calculadora do site da Prospera e gostaria de ajuda para simular o meu caso.';
+    } else {
+      var linhas=[
+        'Olá! Fiz uma simulação na calculadora do site da Prospera:',
+        '• Anexo escolhido: '+anexo+(anexo!==r.anexoEf?' (tributado pelo '+r.anexoEf+')':'')+' · Fator R '+pct(r.fatorR),
+        '• Faturamento mensal: '+brl.format(r.fat),
+        '• Pró-labore: '+brl.format(r.pl),
+        '• Folha (salário base): '+brl.format(r.sal),
+        '• Despesas: '+brl.format(r.desp),
+        '',
+        'Resultado estimado:',
+        '• DAS: '+brl.format(r.das)+' ('+pct(r.aliq)+')'
+      ];
+      if(r.irrfLucro>0) linhas.push('• Retenção sobre lucros (acima de R$ 50 mil): '+brl.format(r.irrfLucro));
+      linhas.push('• Líquido ao sócio: '+brl.format(r.liquido)+'/mês','','Gostaria de conversar sobre o meu caso.');
+      txt=linhas.join('\n');
+    }
+    document.getElementById('waSimulacao').href='https://wa.me/'+WA_NUMERO+'?text='+encodeURIComponent(txt);
   }
 
   function pickAnexo(which){
