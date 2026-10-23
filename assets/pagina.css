@@ -99,8 +99,9 @@ h1,h2,h3{font-family:var(--serif-display);font-weight:500;line-height:1.08;margi
 .artigo h2#fontes{font-size:1.2rem;font-family:var(--trajan);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;}
 
 /* ---------- Cartões (blog) ---------- */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:0 0 3rem;}
-.card{background:var(--paper-2);padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:background .25s ease;}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 3rem;}
+.card{background:var(--paper-2);border:1px solid var(--line);padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:background .25s ease, border-color .25s ease;}
+.card:hover{border-color:var(--line-strong);}
 .card:hover{background:var(--paper-3);}
 .card .cat{font-family:var(--trajan);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);font-weight:600;}
 .card h3{font-size:1.38rem;line-height:1.2;}

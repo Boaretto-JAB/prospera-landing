@@ -290,8 +290,9 @@
     .faq-a a:hover{border-color:var(--navy);}
 
     /* ---------- Cartões do blog (seção Novidades, gerada pelo build) ---------- */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-    .card{background:var(--paper-2);padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:background .25s ease;}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+    .card{background:var(--paper-2);border:1px solid var(--line);padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:background .25s ease, border-color .25s ease;}
+    .card:hover{border-color:var(--line-strong);}
     .card:hover{background:var(--paper-3);}
     .card .cat{font-family:var(--trajan);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);font-weight:600;}
     .card h3{font-size:1.38rem;line-height:1.2;}
