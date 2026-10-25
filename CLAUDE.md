@@ -209,6 +209,15 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 
 ---
 
+## 8b. Google Search Console
+
+- Propriedade **prefixo de URL** `https://prospera-contabil.com`, verificada pela **tag HTML**
+  `google-site-verification` no `<head>` do `index.html` (25/10/2026, conta
+  contato@prospera-contabil.com). **Não apague essa tag** — sem ela o Google desverifica o site.
+- Depois de verificar: enviar `sitemap.xml` em "Sitemaps" e pedir indexação da home e do `/blog/`.
+
+---
+
 ## 9. Como trabalhar (fluxo a cada pedido)
 
 1. Edite o arquivo certo (manual ou `.md` + build — ver tabela da seção 2).
@@ -231,8 +240,10 @@ tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
 
 - Ler e aprovar (Merge) os PRs semanais "Blog: …" (primeiro em 26/10/2026).
 - Criar a conta do **GoatCounter** (código `prosperacontabil`).
-- Cadastrar o site no **Google Search Console** (enviar `https://prospera-contabil.com/sitemap.xml`)
-  e criar/atualizar o **Perfil da Empresa no Google** (avaliações).
+- **Search Console:** tag de verificação publicada em 25/10 → o dono clica em "Verificar",
+  envia o `sitemap.xml` e pede indexação da home e do blog.
+- Criar o **Perfil da Empresa no Google** (guia e textos prontos passados no chat em 25/10);
+  depois, mandar o link de "Pedir avaliações" para virar um botão no site.
 - **Depoimentos:** as sócias vão reunir 3–5 (com autorização) → publicar o bloco comentado.
 - **Pacotes:** decidir nomes, preço no site ou não, extras e limites (`_conteudo/rascunhos/pacotes.md`).
 - **Página Quem somos/Equipe** (fundadoras, CRC, trajetória) — para depois.
