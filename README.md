@@ -35,6 +35,8 @@ serviço no Simples Nacional.
   "Blog: …"**. Para publicar, leia o texto e clique em **Merge**. Regras de escrita em
   `_conteudo/GUIA-EDITORIAL-BLOG.md`.
 - **Visitas e cliques:** GoatCounter (grátis, sem cookies), código `prosperacontabil`.
+- **Google Search Console:** verificado pela tag `google-site-verification` no `<head>` do
+  `index.html` — não apague essa linha.
 
 > ℹ️ Detalhes de identidade visual, regras fiscais da calculadora, estrutura e fluxo de
 > trabalho estão no [`CLAUDE.md`](CLAUDE.md). Agentes: mantenham o CLAUDE.md e este README
