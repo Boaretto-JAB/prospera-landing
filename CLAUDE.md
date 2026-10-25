@@ -214,7 +214,7 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 - Propriedade **prefixo de URL** `https://prospera-contabil.com`, verificada pela **tag HTML**
   `google-site-verification` no `<head>` do `index.html` (25/10/2026, conta
   contato@prospera-contabil.com). **Não apague essa tag** — sem ela o Google desverifica o site.
-- Depois de verificar: enviar `sitemap.xml` em "Sitemaps" e pedir indexação da home e do `/blog/`.
+- 25/10/2026: sitemap enviado e indexação da home e do `/blog/` solicitada.
 
 ---
 
@@ -240,8 +240,8 @@ tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
 
 - Ler e aprovar (Merge) os PRs semanais "Blog: …" (primeiro em 26/10/2026).
 - Criar a conta do **GoatCounter** (código `prosperacontabil`).
-- **Search Console:** ✅ propriedade **verificada em 25/10/2026** (tag HTML). Falta o dono enviar
-  o `sitemap.xml` e pedir indexação da home e do blog.
+- **Search Console:** ✅ verificado em 25/10/2026 (tag HTML); sitemap enviado e indexação da home
+  e do `/blog/` solicitada no mesmo dia. Acompanhar "Desempenho" e "Páginas" nos próximos dias.
 - Criar o **Perfil da Empresa no Google** (guia e textos prontos passados no chat em 25/10);
   depois, mandar o link de "Pedir avaliações" para virar um botão no site.
 - **Depoimentos:** as sócias vão reunir 3–5 (com autorização) → publicar o bloco comentado.
