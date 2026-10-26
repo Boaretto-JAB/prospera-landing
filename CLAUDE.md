@@ -68,7 +68,7 @@ O logo e o favicon das 3 páginas feitas à mão estão embutidos como base64 em
 Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
-- `index.html`: linha **10** (favicon), **447** e **509** (logo) — 1014 linhas no total
+- `index.html`: linha **10** (favicon), **449** e **511** (logo) — 1046 linhas no total (26/10/2026)
 - `calculadora.html`: linha **19** (favicon), **146** (logo) — 417 linhas
 - `guia-cnpj.html`: linha **19** (favicon), **124** (logo) — 253 linhas
 
@@ -195,6 +195,14 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 - **Blog no ar desde 23/10/2026** (PR #1 aprovado pelo dono e mesclado): 3 posts — NFS-e
   Nacional em 1º/11/2026, lucros acima de R$ 50 mil, Fator R. O link "Blog" e a seção
   "Novidades" da home já aparecem.
+- **26/10/2026 — 4º post** "IBS e CBS no Simples Nacional: prazo para escolher termina em 30/10"
+  (Reforma Tributária), escrito à mão e enviado por PR (branch `blog/2026-10-26`). Tem data de
+  validade: só faz sentido publicar até 30/10/2026.
+- ⚠️ **26/10/2026 — a tarefa semanal falhou em silêncio:** escreveu o post, mas o push deu
+  **403** porque este repo não está nas **fontes (repositórios)** da rotina, e a execução saiu
+  como "succeeded" mesmo assim. Conserto: adicionar `Boaretto-JAB/prospera-landing` (com
+  escrita) nas fontes da rotina em claude.ai/code. Para validar, use "Rodar agora" e confira se
+  a branch `blog/…` e o PR aparecem no GitHub (o status sozinho não prova nada).
 
 ---
 
