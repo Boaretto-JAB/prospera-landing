@@ -1,6 +1,6 @@
 ---
 titulo: Contabilidade para profissional PJ
-titulo_seo: Contabilidade para profissional PJ no Simples Nacional · Prospera
+titulo_seo: Contabilidade para profissional PJ no Simples · Prospera
 resumo: Foi contratado como PJ? Abrimos o CNPJ certo, planejamos o Fator R para você pagar menos imposto e cuidamos das notas fiscais e do DAS todo mês.
 menu: Profissional PJ
 ordem: 1

@@ -1,6 +1,6 @@
 ---
 titulo: Contabilidade para engenharia e arquitetura
-titulo_seo: Contabilidade para engenheiros, arquitetos e empresas de projeto · Prospera
+titulo_seo: Contabilidade para engenheiros e arquitetos · Prospera
 resumo: Engenheiros, arquitetos e empresas de projetos e consultoria técnica: enquadramento certo, Fator R, notas fiscais, certidões e impostos em dia.
 menu: Engenharia e arquitetura
 ordem: 3
