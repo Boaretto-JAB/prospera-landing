@@ -80,5 +80,5 @@ Links internos úteis: `/calculadora.html`, `/guia-cnpj.html`, `/#proposta` e as
 1. Escreva/edite o `.md` em `_conteudo/blog/`.
 2. Rode `node _scripts/build.mjs` na raiz do repositório (gera o HTML, a lista do blog, o feed,
    o sitemap e a seção "Novidades" da home). Se aparecer ❌, corrija o que ele apontar.
-3. Posts automáticos vão para um **Pull Request "Blog: …"** — as sócias leem e, se estiver tudo
+3. Posts automáticos vão para um **Pull Request "Blog: …"** — o João (dono) lê e, se estiver tudo
    certo, clicam em **Merge**. O site atualiza sozinho em ~1 minuto.

@@ -186,7 +186,7 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 - **Regras de escrita:** `_conteudo/GUIA-EDITORIAL-BLOG.md` (fontes oficiais obrigatórias,
   categorias, formato, pauta). Nunca citar clientes nem dados internos.
 - **Posts NUNCA vão direto para a `main`.** Ficam numa branch `blog/…` com um **Pull Request
-  "Blog: …"**; as sócias leem e clicam em **Merge** para publicar (~1 min).
+  "Blog: …"**; o João (dono) lê e clica em **Merge** para publicar (~1 min).
   Cuidado com `git add -A` em outra branch enquanto há posts não commitados na pasta — foi
   assim que, em 23/10, 3 posts escaparam para a `main` por alguns minutos.
 - **Tarefa agendada semanal** "Blog semanal da Prospera" (id `trig_01K3GpzZqcZoDNr4oyApcu5G`):
@@ -199,7 +199,10 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   (Reforma Tributária): escrito à mão, PR #2 aprovado pelo dono (Merge 26/10, `3fe8b82`); conferido no ar
   (post, lista do blog, Novidades da home e sitemap). Tem data de validade: depois de 30/10/2026, pensar em
   atualizar (`atualizado:`) para a janela de março/2027 ou tirar do destaque.
-- ⚠️ **26/10/2026 — a tarefa semanal falhou em silêncio:** escreveu o post, mas o push deu
+- ✅ **26/10/2026 — rotina consertada** (com o OK do João): `Boaretto-JAB/prospera-landing` incluído nas
+  **fontes** da rotina (por isso ela agora consegue dar push), texto sem o passo `add_repo`, "o João aprova"
+  e, se o push/PR falhar, o resumo começa com **"FALHOU:"**. Validada com "Rodar agora".
+- ⚠️ **26/10/2026 — a tarefa semanal falhou em silêncio (antes do conserto):** escreveu o post, mas o push deu
   **403** porque este repo não está nas **fontes (repositórios)** da rotina, e a execução saiu
   como "succeeded" mesmo assim. Conserto: adicionar `Boaretto-JAB/prospera-landing` (com
   escrita) nas fontes da rotina em claude.ai/code. Para validar, use "Rodar agora" e confira se
