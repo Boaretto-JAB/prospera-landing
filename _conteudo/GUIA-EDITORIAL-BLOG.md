@@ -38,7 +38,7 @@ O endereço vira `prospera-contabil.com/blog/endereco-do-post.html`.
 
 ```
 ---
-titulo: Título claro, com a palavra-chave no começo (até ~70 caracteres)
+titulo: Título claro, com a palavra-chave no começo (até ~60 caracteres — o Google corta acima disso)
 resumo: Uma ou duas frases que aparecem no Google e nos cartões (até 170 caracteres).
 data: AAAA-MM-DD            (mesma data do nome do arquivo; não pode ser no futuro)
 categoria: Simples Nacional (uma da lista abaixo)

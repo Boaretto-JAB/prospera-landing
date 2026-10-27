@@ -1,6 +1,6 @@
 ---
 titulo: Contabilidade para TI, marketing e consultoria
-titulo_seo: Contabilidade para TI, agências de marketing e consultores · Prospera
+titulo_seo: Contabilidade para TI, marketing e consultoria · Prospera
 resumo: Desenvolvedores, agências, profissionais de marketing, consultores e instrutores: atividade certa, Fator R, exportação de serviços e notas fiscais em dia.
 menu: TI, marketing e consultoria
 ordem: 4
