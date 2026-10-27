@@ -212,12 +212,13 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 
 ## 8. Contador de visitas (GoatCounter)
 
-- Script em todas as páginas: `https://prosperacontabil.goatcounter.com/count` (grátis, sem
+- Script em todas as páginas: `https://prospera-contabil.goatcounter.com/count` (grátis, sem
   cookies → não precisa de aviso de cookies). `assets/contador.js` registra cliques no
   WhatsApp (`whatsapp`) e na Área do cliente (`area-do-cliente`); o formulário registra
   `proposta-enviada`.
-- ⚠️ **Pendente do dono:** criar a conta em goatcounter.com com o código **`prosperacontabil`**
-  (se o código estiver ocupado, trocar nas 3 páginas, no `_modelos/pagina.html` e aqui).
+- ✅ Conta criada pelo João em 27/10/2026 com o código **`prospera-contabil`** (com hífen); o site
+  apontava para `prosperacontabil` e foi corrigido no mesmo dia. Se um dia trocar o código, mude nas 3
+  páginas feitas à mão, no `_modelos/pagina.html`, no `assets/contador.js` e aqui, e rode o build.
 
 ---
 
@@ -261,7 +262,7 @@ tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
 ## 10. Pendências (23/10/2026)
 
 - Ler e aprovar (Merge) os PRs semanais "Blog: …" (primeiro em 26/10/2026).
-- Criar a conta do **GoatCounter** (código `prosperacontabil`).
+- ~~Criar a conta do **GoatCounter**~~ ✅ 27/10/2026 (código `prospera-contabil`).
 - **Search Console:** ✅ verificado em 25/10/2026 (tag HTML); sitemap enviado e indexação da home
   e do `/blog/` solicitada no mesmo dia. Acompanhar "Desempenho" e "Páginas" nos próximos dias.
 - Criar o **Perfil da Empresa no Google** (guia e textos prontos passados no chat em 25/10);

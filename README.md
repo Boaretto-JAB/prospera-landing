@@ -34,7 +34,7 @@ serviço no Simples Nacional.
 - **Blog:** toda segunda uma tarefa agendada escreve um post novo e abre um **Pull Request
   "Blog: …"**. Para publicar, leia o texto e clique em **Merge**. Regras de escrita em
   `_conteudo/GUIA-EDITORIAL-BLOG.md`.
-- **Visitas e cliques:** GoatCounter (grátis, sem cookies), código `prosperacontabil`.
+- **Visitas e cliques:** GoatCounter (grátis, sem cookies), código `prospera-contabil`.
 - **Google Search Console:** verificado pela tag `google-site-verification` no `<head>` do
   `index.html` — não apague essa linha.
 
