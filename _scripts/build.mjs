@@ -196,7 +196,7 @@ ${md(p.corpo)}
       ${relacionados.length ? `<section class="relacionados"><h2>Leia também</h2><div class="cards">${relacionados.map(cartao).join('\n        ')}</div></section>` : ''}
     </div>`;
     const jsonld = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.titulo, description: p.resumo, datePublished: p.data, dateModified: p.atualizado || p.data, url: SITE + p.url, mainEntityOfPage: SITE + p.url, image: SITE + '/assets/og-image.jpg', inLanguage: 'pt-BR', author: { '@type': 'Organization', name: p.autor || 'Equipe Prospera' }, publisher: ORG };
-    gravacoes.set(p.url.slice(1), pagina({ ...base(true), titulo_seo: esc(`${p.titulo} · Blog da Prospera`), descricao: esc(p.resumo), url: SITE + p.url, og_tipo: 'article', og_titulo: esc(p.titulo), jsonld: JSON.stringify(jsonld), conteudo, wa_link: waLink(msg) }));
+    gravacoes.set(p.url.slice(1), pagina({ ...base(true), titulo_seo: esc(p.titulo), descricao: esc(p.resumo), url: SITE + p.url, og_tipo: 'article', og_titulo: esc(p.titulo), jsonld: JSON.stringify(jsonld), conteudo, wa_link: waLink(msg) }));
   }
   const indice = `
     <section class="page-hero">

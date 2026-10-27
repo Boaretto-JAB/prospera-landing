@@ -1,6 +1,6 @@
 ---
 titulo: Contabilidade para profissionais da saúde
-titulo_seo: Contabilidade para médicos, dentistas, psicólogos e clínicas · Prospera
+titulo_seo: Contabilidade para médicos, dentistas e clínicas · Prospera
 resumo: Médicos, dentistas, psicólogos, fisioterapeutas e clínicas: CNPJ certo, Fator R bem planejado, notas fiscais e impostos em dia, com atendimento 100% digital.
 menu: Saúde
 ordem: 2

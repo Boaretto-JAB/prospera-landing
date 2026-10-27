@@ -69,8 +69,8 @@ Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
 - `index.html`: linha **10** (favicon), **449** e **511** (logo) — 1046 linhas no total (26/10/2026)
-- `calculadora.html`: linha **19** (favicon), **146** (logo) — 417 linhas
-- `guia-cnpj.html`: linha **19** (favicon), **124** (logo) — 253 linhas
+- `calculadora.html`: linha **19** (favicon), **147** (logo) — 418 linhas (26/10/2026)
+- `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 254 linhas (26/10/2026)
 
 As páginas **geradas** usam `/assets/logo.png` e `/assets/favicon.png` (mesma imagem).
 
@@ -220,6 +220,16 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   (se o código estiver ocupado, trocar nas 3 páginas, no `_modelos/pagina.html` e aqui).
 
 ---
+
+## 8a. SEO básico (26/10/2026)
+
+- **Títulos até ~60 caracteres** e **descrições entre 70 e 160** (o Google corta acima disso). Páginas fixas e de
+  ramo estão dentro; os 4 primeiros posts têm 67–69 (o título do post é o próprio título do artigo) e o guia
+  editorial pede ≤ 60 dali em diante. Nos posts, a aba mostra só o título do post (sem " · Blog da Prospera").
+- Calculadora e Guia do CNPJ ganharam dados estruturados (WebPage + AccountingService), no fim do `<head>`.
+- **Endereço no rodapé:** de propósito, ainda só na home — o apto 302 recebe clientes? Se não, o Perfil do
+  Google vai como "área de atendimento" (endereço oculto) e o site deve seguir a mesma decisão.
+- Auditoria repetível: `scripts/auditoria_site.py` no repo privado `Boaretto-JAB/agencia-prospera`.
 
 ## 8b. Google Search Console
 
