@@ -1,6 +1,6 @@
 ---
-titulo: Novembro de 2026: as datas do Simples Nacional para marcar no calendário
-resumo: Nota fiscal nacional em 1º/11, DAS em 23/11 por causa do feriado de 20/11 e prazos de quem tem funcionário. Veja o que fazer em cada data.
+titulo: Novembro de 2026: datas do Simples Nacional para anotar
+resumo: Nota fiscal nacional a partir de 1º/11, DAS em 23/11 por causa do feriado de 20/11 e prazos de quem tem funcionário. Veja o que fazer em cada data.
 data: 2026-10-26
 categoria: Simples Nacional
 ---
@@ -11,6 +11,7 @@ Novembro chega com mudança na nota fiscal, um feriado que mexe na data do impos
 | Data | O que acontece | Para quem |
 |---|---|---|
 | **1º/11** (domingo) | Começa a obrigação de emitir a nota fiscal de serviço (NFS-e) no padrão nacional | Toda ME e EPP do Simples que emite nota de serviço |
+| **2/11** (segunda) | Feriado nacional de Finados | Todos |
 | **3/11 a 20/12** | Janela para cancelar a opção por pagar IBS e CBS fora do DAS | Só quem fez essa opção até 30/10 |
 | **19/11** (quinta) | Provável vencimento da guia do FGTS Digital | Quem tem funcionário |
 | **23/11** (segunda) | Vencimento do **DAS de outubro** (o dia 20 é feriado) | Todas as empresas do Simples |
@@ -20,7 +21,7 @@ Novembro chega com mudança na nota fiscal, um feriado que mexe na data do impos
 
 A partir de **1º de novembro de 2026**, a microempresa (ME) e a empresa de pequeno porte (EPP) do Simples Nacional passam a emitir a NFS-e pelo **padrão nacional**, e não mais pelo sistema da prefeitura. A regra vem da Resolução CGSN nº 191/2026. Já explicamos o passo a passo no post [NFS-e Nacional: obrigatória para o Simples a partir de 1º de novembro](/blog/nfs-e-nacional-obrigatoria-para-o-simples.html).
 
-O ponto prático: como 1º/11 cai num domingo, a primeira nota no novo padrão será, na maioria dos casos, na **segunda-feira, 2 de novembro** (se for dia de expediente na sua cidade). Deixe o acesso ao emissor testado antes.
+O ponto prático: 1º/11 cai num domingo e 2/11 (segunda) é **feriado nacional de Finados**. Por isso, na maioria das empresas, a primeira nota no novo padrão será emitida na **terça-feira, 3 de novembro**. Deixe o acesso ao emissor testado antes.
 
 ## 20 de novembro é feriado: o DAS vence em 23/11
 
@@ -58,6 +59,7 @@ Se você prefere deixar esses prazos com quem acompanha todo mês, [fale com a g
 - [Agência Senado — Dia da Consciência Negra se torna feriado nacional (Lei nº 14.759/2023)](https://www12.senado.leg.br/noticias/materias/2023/12/22/dia-da-consciencia-negra-se-torna-feriado-nacional) — consultado em 26/10/2026
 - [Receita Federal — Simples Nacional: NFS-e Nacional será obrigatória para ME e EPP a partir de 1º de novembro de 2026](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026) — consultado em 26/10/2026
 - [Receita Federal (base de Normas) — Resolução CGSN nº 194, de 25 de setembro de 2026 (janela de cancelamento de 3/11 a 20/12)](https://normasinternet2.receita.fazenda.gov.br/#/consulta/externa/153801) — consultado em 26/10/2026
-- [Portal do Simples Nacional — Receita Federal](https://www8.receita.fazenda.gov.br/simplesnacional/) — regra de vencimento do DAS no dia 20 e prorrogação para o dia útil seguinte — consultado em 26/10/2026
+- [Receita Federal (base de Normas) — Resolução CGSN nº 140/2018, art. 40, caput e § 3º (DAS até o dia 20; sem expediente bancário, até o dia útil imediatamente posterior)](https://normasinternet2.receita.fazenda.gov.br/#/consulta/externa/92278) — consultado em 27/10/2026
+- [Planalto — Lei nº 10.607/2002 (2 de novembro é feriado nacional)](https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm) — consultado em 27/10/2026
 - [Ministério do Trabalho e Emprego — FGTS Digital](https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/fgtsdigital) — vencimento no dia 20 e antecipação para o dia útil anterior — consultado em 26/10/2026
 - [Planalto — Lei nº 4.749/1965 (13º salário, 1ª parcela até 30 de novembro)](https://www.planalto.gov.br/ccivil_03/leis/l4749.htm) — consultado em 26/10/2026
