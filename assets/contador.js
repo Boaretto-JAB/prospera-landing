@@ -1,6 +1,6 @@
 // Contador de cliques do site (GoatCounter — grátis e sem cookies).
 // Conta cliques no WhatsApp e na Área do cliente; o painel fica em
-// https://prosperacontabil.goatcounter.com (aba "Events"/eventos).
+// https://prospera-contabil.goatcounter.com (aba "Events"/eventos).
 document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('a[href]');
   if (!a || !window.goatcounter || !window.goatcounter.count) return;
