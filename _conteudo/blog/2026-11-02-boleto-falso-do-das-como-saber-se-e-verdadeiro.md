@@ -12,7 +12,7 @@ Os alertas oficiais da Receita Federal repetem os mesmos pontos:
 
 - A Receita **não envia boletos, descontos ou links de pagamento** por mensagem, e também não faz cobrança de débitos por **SMS ou WhatsApp**.
 - Pendências e débitos reais aparecem **no e-CAC**, o portal de atendimento da Receita, acessado pelo site oficial.
-- E-mail verdadeiro da Receita termina em **@rfb.gov.br**. Desconfie de qualquer outro endereço.
+- A Receita **não manda e-mail com link** cobrando pagamento. Desconfie até de remetente que parece ser da Receita: golpistas imitam endereços **@rfb.gov.br** de verdade.
 - Golpistas criam **pressa**: prazo de poucos minutos, ameaça de bloqueio do CPF, do CNPJ ou da conta bancária, "desconto" para pagar na hora.
 - Os golpes podem usar **dados verdadeiros** (nome, CPF), por isso a mensagem parecer "sabe quem eu sou" não prova nada.
 
@@ -53,5 +53,5 @@ Recebeu uma cobrança estranha? [Mande para a gente pelo WhatsApp](https://wa.me
 
 - [Receita Federal — Golpes usam nome e CPF do contribuinte para simular cobranças da Receita Federal (dezembro/2025)](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/golpes-usam-nome-e-cpf-do-contribuinte-para-simular-cobrancas-da-receita-federal) — consultado em 02/11/2026
 - [Receita Federal — Receita Federal não envia SMS nem mensagens por WhatsApp para realizar cobrança de débitos de MEIs (maio/2025)](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/maio/receita-federal-nao-envia-sms-nem-mensagens-por-whatsapp-para-realizar-cobranca-de-debitos-de-meis) — consultado em 02/11/2026
-- [Receita Federal — É Golpe?](https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/e-golpe) — consultado em 02/11/2026
+- [Receita Federal — Criminosos simulam endereços de e-mail do órgão para aplicar golpes](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/abril/receita-federal-alerta-criminosos-simulam-enderecos-de-e-mail-do-orgao-para-aplicar-golpes) — consultado em 05/11/2026
 - [Portal do Simples Nacional — alerta sobre guia falsa do Simples Nacional](https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=434ec8ba-2ebd-43f3-a249-c1ca262dc9f7) — consultado em 02/11/2026
