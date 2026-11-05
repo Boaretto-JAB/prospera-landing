@@ -68,9 +68,9 @@ O logo e o favicon das 3 páginas feitas à mão estão embutidos como base64 em
 Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
-- `index.html`: linha **10** (favicon), **449** e **511** (logo) — 1046 linhas no total (26/10/2026)
-- `calculadora.html`: linha **19** (favicon), **147** (logo) — 418 linhas (26/10/2026)
-- `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 254 linhas (26/10/2026)
+- `index.html`: linha **10** (favicon), **448** e **510** (logo) — 1045 linhas no total (05/11/2026)
+- `calculadora.html`: linha **19** (favicon), **147** (logo) — 419 linhas (05/11/2026)
+- `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 255 linhas (05/11/2026)
 
 As páginas **geradas** usam `/assets/logo.png` e `/assets/favicon.png` (mesma imagem).
 
@@ -120,7 +120,9 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 ### Dados de contato e legais (manter consistentes em todas as páginas)
 - **WhatsApp:** (49) 99840-0684 → `https://wa.me/5549998400684`
 - **E-mail:** contato@prospera-contabil.com · **Instagram:** @prospera.contabil
-- **Endereço:** Rua João Caldart, 129 – Apto. 302, Centro, Capinzal/SC, CEP 89665-000
+- **Localidade:** **Capinzal/SC · atendimento 100% digital.** A rua e o número **não aparecem** no site
+  (decisão do dono em 05/11/2026: o endereço não recebe clientes; o Perfil do Google é de "área de atendimento").
+  Nos dados estruturados da home, o `PostalAddress` tem só cidade, UF, CEP e país.
 - **Horário:** segunda a sexta, das 8h às 18h
 - **Razão social / CNPJ:** Prospera Consultoria Contábil Ltda · 58.525.311/0001-54
 - **Responsáveis técnicas:** Solange C. F. Boaretto — CRC/SC 040604/O-4 ·
@@ -228,8 +230,9 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   ramo estão dentro; os 4 primeiros posts têm 67–69 (o título do post é o próprio título do artigo) e o guia
   editorial pede ≤ 60 dali em diante. Nos posts, a aba mostra só o título do post (sem " · Blog da Prospera").
 - Calculadora e Guia do CNPJ ganharam dados estruturados (WebPage + AccountingService), no fim do `<head>`.
-- **Endereço no rodapé:** de propósito, ainda só na home — o apto 302 recebe clientes? Se não, o Perfil do
-  Google vai como "área de atendimento" (endereço oculto) e o site deve seguir a mesma decisão.
+- **Localidade igual em todo lugar (NAP):** decidido em 05/11/2026 que o endereço não recebe clientes. O Perfil
+  do Google é de "área de atendimento" (sem endereço público) e o site segue igual: só "Capinzal/SC", que já está
+  no rodapé de todas as páginas. A auditoria do `agencia-prospera` confere "Capinzal/SC" em cada página.
 - Auditoria repetível: `scripts/auditoria_site.py` no repo privado `Boaretto-JAB/agencia-prospera`.
 
 ## 8b. Google Search Console
