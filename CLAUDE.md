@@ -98,9 +98,12 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
   Dúvidas, Contato) + botão **Área do cliente** (Onvio). Menu vira hambúrguer em ≤1100px;
   o botão Área do cliente some em ≤760px (fica no menu do celular).
 - **Hero**: headline + botões "Falar no WhatsApp" e "Peça uma proposta" (`#proposta`).
-- **Faixa de destaques**: 15+ anos de experiência de cada sócia · 4 estados com clientes ·
-  100% digital. (As sócias **não** querem mostrar o número de empresas por enquanto.)
-- **01 Sobre** (texto fala em "as sócias") + 3 pilares.
+- **Faixa de destaques**: 15+ anos de experiência de cada sócio · 4 estados com clientes ·
+  100% digital. (Os sócios **não** querem mostrar o número de empresas por enquanto.)
+- **01 Sobre** + 3 pilares. Desde 14/11/2026 (pedido do João) o texto fala nos **três sócios**, cada um com mais de
+  15 anos de experiência: as contadoras Solange C. F. Boaretto e Taynara M. Bugança (áreas contábil, fiscal, DP,
+  gestão financeira e controladoria) e o engenheiro de produção mecânica João Augusto Boaretto (gestão, tecnologia e
+  finanças). O rodapé continua com as duas **responsáveis técnicas** (CRC), que são só as contadoras.
 - **02 Serviços**: 6 cards + `<!-- RAMOS:SERVICOS -->` (links das páginas de ramo).
 - **03 Tecnologia a seu favor** (`#tecnologia`): Caixa Postal/DCTFWeb, certidões,
   certificado/procuração, emissor NFS-e, conferência com IA, Portal do Cliente.
