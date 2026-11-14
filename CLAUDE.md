@@ -29,7 +29,9 @@
 
 Site institucional da **Prospera Consultoria Contábil** (razão social: Prospera
 Consultoria Contábil Ltda, CNPJ 58.525.311/0001-54), escritório de contabilidade de
-**Capinzal/SC** focado em prestadores de serviço no Simples Nacional.
+**Capinzal/SC** para empresas de **serviço, comércio e indústria**, no Simples Nacional, no Lucro Presumido e no
+Lucro Real. *(Até 14/11/2026 o foco era só prestadores de serviço no Simples; o João ampliou nesse dia. A
+Calculadora e o Guia do CNPJ continuam sendo do Simples/prestadores, porque é o conteúdo deles.)*
 
 - **Repositório:** `Boaretto-JAB/prospera-landing` (GitHub, público)
 - **Hospedagem:** GitHub Pages (publicação automática a cada `git push` na `main`, ~1 min)
@@ -182,7 +184,8 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   `eyebrow`, `mensagem_whatsapp`, `ramo_formulario` (tem que ser igual a uma opção do
   campo "Ramo" do formulário da home).
 - Páginas de ramo atuais: Profissional PJ (exemplo do Fator R: R$ 15 mil/mês → +R$ 1.141,31),
-  Saúde, Engenharia e arquitetura, TI/marketing/consultoria.
+  Saúde, Engenharia e arquitetura, TI/marketing/consultoria e **Advocacia** (14/11/2026, `ordem: 5`).
+  O campo "Ramo" do formulário também tem Comércio e Indústria (ainda sem página).
 
 ---
 

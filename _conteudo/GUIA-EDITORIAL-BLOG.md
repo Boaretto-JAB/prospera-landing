@@ -5,8 +5,10 @@
 
 ## 1. Para quem escrevemos
 
-Donos de pequenas empresas de **prestação de serviço no Simples Nacional**, sem formação
-contábil: profissionais PJ, saúde, engenharia/arquitetura, TI/marketing/consultoria.
+Donos de pequenas e médias empresas de **serviço, comércio e indústria**, no Simples Nacional, no Lucro
+Presumido ou no Lucro Real, sem formação contábil: profissionais PJ, advocacia, saúde, engenharia/arquitetura,
+TI/marketing/consultoria, comércio e indústria. (Público ampliado em 14/11/2026, decisão do João; antes era só
+prestação de serviço no Simples.)
 A pergunta que todo post responde logo no início: **"o que isso muda para mim e o que eu faço?"**
 
 ## 2. Tom
@@ -66,7 +68,7 @@ Links internos úteis: `/calculadora.html`, `/guia-cnpj.html`, `/#proposta` e as
 
 ## 5. Pauta (prioridades)
 
-1. **Novidades da semana** que afetam o Simples/prestadores (norma nova, prazo, mudança de sistema).
+1. **Novidades da semana** que afetam os clientes: Simples, Presumido ou Real; serviço, comércio ou indústria (norma nova, prazo, mudança de sistema).
 2. Calendário: prazos do mês que vem (DAS, DCTFWeb, IRPF, opções da Reforma Tributária).
 3. Temas fixos (quando não houver novidade): Fator R; pró-labore × lucros; NFS-e Nacional;
    Reforma Tributária no Simples (IBS/CBS, opção pelo regime regular por semestre, campos na nota);

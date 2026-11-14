@@ -1,7 +1,7 @@
 # Prospera — Site institucional
 
-Site da **Prospera Consultoria Contábil** (Capinzal/SC), contabilidade para prestadores de
-serviço no Simples Nacional.
+Site da **Prospera Consultoria Contábil** (Capinzal/SC), contabilidade para empresas de
+serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público ampliado em 14/11/2026).
 
 🔗 **No ar em:** https://prospera-contabil.com
 
@@ -15,7 +15,7 @@ serviço no Simples Nacional.
   números pelo WhatsApp. É uma estimativa e **não substitui a apuração oficial**.
 - **`guia-cnpj.html`** — Guia do CNPJ: 7 temas educativos para quem abriu empresa.
 - **`contabilidade-para-*.html`** — páginas por ramo: profissional PJ, saúde, engenharia e
-  arquitetura, TI/marketing/consultoria. *(geradas)*
+  arquitetura, TI/marketing/consultoria e advocacia (desde 14/11/2026). *(geradas)*
 - **`blog/`** — blog com posts sobre contabilidade e impostos (no ar desde 23/10/2026). *(gerado)*
 
 ## Como funciona

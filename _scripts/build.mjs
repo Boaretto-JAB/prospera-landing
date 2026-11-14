@@ -203,7 +203,7 @@ ${md(p.corpo)}
       <div class="wrap">
         <span class="eyebrow">Blog</span>
         <h1>Contabilidade sem complicação</h1>
-        <p class="lead">Novidades e orientações sobre Simples Nacional, impostos, notas fiscais e a Reforma Tributária — em linguagem simples, para quem presta serviço.</p>
+        <p class="lead">Novidades e orientações sobre Simples Nacional, impostos, notas fiscais e a Reforma Tributária — em linguagem simples, para quem empreende.</p>
       </div>
     </section>
     <div class="wrap">
@@ -212,7 +212,7 @@ ${md(p.corpo)}
       </div>
     </div>`;
   const msgBlog = 'Olá! Vim pelo blog da Prospera e gostaria de mais informações.';
-  gravacoes.set('blog/index.html', pagina({ ...base(true), titulo_seo: 'Blog da Prospera · contabilidade para prestadores de serviço', descricao: 'Novidades e orientações sobre Simples Nacional, impostos, notas fiscais e Reforma Tributária, em linguagem simples.', url: SITE + '/blog/', og_tipo: 'website', og_titulo: 'Blog da Prospera', jsonld: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Blog', name: 'Blog da Prospera', url: SITE + '/blog/', publisher: ORG }), conteudo: indice, wa_link: waLink(msgBlog) }));
+  gravacoes.set('blog/index.html', pagina({ ...base(true), titulo_seo: 'Blog da Prospera · contabilidade para empresas', descricao: 'Novidades e orientações sobre Simples Nacional, impostos, notas fiscais e Reforma Tributária, em linguagem simples.', url: SITE + '/blog/', og_tipo: 'website', og_titulo: 'Blog da Prospera', jsonld: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Blog', name: 'Blog da Prospera', url: SITE + '/blog/', publisher: ORG }), conteudo: indice, wa_link: waLink(msgBlog) }));
   const itens = posts.slice(0, 20).map((p) => `    <item>
       <title>${escXml(p.titulo)}</title>
       <link>${SITE}${p.url}</link>
@@ -226,7 +226,7 @@ ${md(p.corpo)}
   <channel>
     <title>Blog da Prospera</title>
     <link>${SITE}/blog/</link>
-    <description>Contabilidade para prestadores de serviço no Simples Nacional, em linguagem simples.</description>
+    <description>Contabilidade para empresas de serviço, comércio e indústria, em linguagem simples.</description>
     <language>pt-BR</language>
 ${itens}
   </channel>
