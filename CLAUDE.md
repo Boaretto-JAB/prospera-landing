@@ -120,8 +120,8 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
   **Nossa tecnologia** (`/nossa-tecnologia.html`, desde 16/11/2026), que detalha cada item e também
   fala da Junta Comercial. O rodapé ("Navegação") da home e das páginas geradas também tem o link.
 - **Pacotes** (`#pacotes`, publicado com o OK do João): Essencial, Gestão e Estratégico, **sem preço e sem
-  limites** (decisões de 16/11/2026). O detalhe comercial (o que é cobrado à parte, notas inclusas) fica no repo
-  **privado** `agencia-prospera` (`marca/pacotes.md`), nunca aqui (este repo é público). Os 3 cartões ficam
+  limites** (decisões de 16/11/2026). Embaixo, a linha "Contratados à parte" (pedido do João, 16/11/2026). A fonte
+  oficial dos pacotes é o repo **privado** `agencia-prospera` (`marca/pacotes.md`); limites e valores nunca aqui. Os 3 cartões ficam
   sempre em 3 colunas até 760px (regra `#pacotes .services`), e o nome do pacote vem acima do título.
 - **Depoimentos**: bloco pronto, **comentado (fora do ar)**. Para publicar, ver as instruções dentro do comentário.
 - O texto do **Sobre** termina com o link "Conheça a equipe" (`/equipe.html`); o rodapé também tem "Nossa equipe".

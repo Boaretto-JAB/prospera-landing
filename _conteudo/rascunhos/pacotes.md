@@ -31,6 +31,6 @@
 ## Decidido (16/11/2026)
 
 O João decidiu tudo em 16/11/2026: **Essencial, Gestão e Estratégico**, sem preço e sem limites no site.
-O texto publicado está na seção `#pacotes` do `index.html`. O detalhe comercial (o que é cobrado à parte,
-limites, notas inclusas) fica no repositório **privado** `agencia-prospera` (`marca/pacotes.md`), não aqui.
+O texto publicado está na seção `#pacotes` do `index.html`, com a linha dos serviços contratados à parte.
+A fonte oficial (e os limites, que não vão ao site) fica no repositório **privado** `agencia-prospera` (`marca/pacotes.md`).
 Este arquivo fica só como histórico do rascunho de out/2026.
