@@ -56,6 +56,8 @@ Calculadora e o Guia do CNPJ continuam sendo do Simples/prestadores, porque é o
 | `robots.txt` | Libera o site para buscadores e aponta o sitemap. | À mão (raramente). |
 | `assets/` | `logo.png`, `favicon.png` (extraídos do base64, mesmos bytes), `og-image.jpg` (1200×630, prévia de link), `pagina.css`/`pagina.js` (páginas geradas), `contador.js` (cliques). | À mão. |
 | `_conteudo/ramos/` | Textos das páginas "Contabilidade para…" (Markdown + cabeçalho). | À mão. |
+| `_conteudo/paginas/` | Páginas avulsas (`<endereco>.md` → `/<endereco>.html`). Hoje: `nossa-tecnologia.md` (16/11/2026). | À mão + rodar build. |
+| `nossa-tecnologia.html` | Página "Nossa tecnologia". | **Gerada** — edite `_conteudo/paginas/nossa-tecnologia.md`. |
 | `_conteudo/blog/` | Posts do blog (`AAAA-MM-DD-endereco.md`). | À mão / tarefa semanal. |
 | `_conteudo/GUIA-EDITORIAL-BLOG.md` | Regras de escrita e exatidão do blog, formato e pauta. | À mão. |
 | `_conteudo/rascunhos/pacotes.md` | Rascunho dos pacotes (decisões pendentes das sócias). | À mão. |
@@ -70,7 +72,7 @@ O logo e o favicon das 3 páginas feitas à mão estão embutidos como base64 em
 Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
-- `index.html`: linha **10** (favicon), **448** e **510** (logo) — 1045 linhas no total (05/11/2026)
+- `index.html`: linha **10** (favicon), **448** e **510** (logo) — 1051 linhas no total (16/11/2026)
 - `calculadora.html`: linha **19** (favicon), **147** (logo) — 419 linhas (05/11/2026)
 - `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 255 linhas (05/11/2026)
 
@@ -109,7 +111,9 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 - **02 Serviços**: 6 cards + `<!-- RAMOS:SERVICOS -->` (links das páginas de ramo).
 - **03 Tecnologia a seu favor** (`#tecnologia`): Caixa Postal/DCTFWeb, certidões,
   certificado/procuração, emissor NFS-e, conferência com IA, Portal do Cliente.
-  Só afirme o que de fato roda nos sistemas da Prospera.
+  Só afirme o que de fato roda nos sistemas da Prospera. No fim da seção, link para a página
+  **Nossa tecnologia** (`/nossa-tecnologia.html`, desde 16/11/2026), que detalha cada item e também
+  fala da Junta Comercial. O rodapé ("Navegação") da home e das páginas geradas também tem o link.
 - **Depoimentos** e **Pacotes**: blocos prontos, **comentados (fora do ar)**. Para publicar,
   ver as instruções dentro de cada comentário (pacotes: `_conteudo/rascunhos/pacotes.md`).
 - `<!-- BLOG:NOVIDADES -->`: 3 posts mais recentes (só aparece quando há posts).
@@ -183,6 +187,11 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 - Cabeçalho das páginas de ramo: `titulo`, `titulo_seo`, `resumo`, `menu`, `ordem`,
   `eyebrow`, `mensagem_whatsapp`, `ramo_formulario` (tem que ser igual a uma opção do
   campo "Ramo" do formulário da home).
+- **Páginas avulsas** (desde 16/11/2026): `_conteudo/paginas/<endereco>.md` vira `/<endereco>.html` com o mesmo
+  modelo. Cabeçalho: `titulo`, `titulo_seo` (≤ 60), `resumo` (≤ 160), `eyebrow`, `mensagem_whatsapp`. Entram no
+  sitemap. O HTML gerado leva a marca `<!-- pagina-gerada: … -->`: é por ela que o build apaga a página quando o
+  `.md` some (páginas feitas à mão nunca têm a marca). Endereços de outras páginas (`index`, `calculadora`,
+  `guia-cnpj`, `contabilidade-para-…`) são recusados.
 - Páginas de ramo atuais: Profissional PJ (exemplo do Fator R: R$ 15 mil/mês → +R$ 1.141,31),
   Saúde, Engenharia e arquitetura, TI/marketing/consultoria e **Advocacia** (14/11/2026, `ordem: 5`).
   O campo "Ramo" do formulário também tem Comércio e Indústria (ainda sem página).

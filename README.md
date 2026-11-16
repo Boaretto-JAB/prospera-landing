@@ -16,13 +16,16 @@ serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público am
 - **`guia-cnpj.html`** — Guia do CNPJ: 7 temas educativos para quem abriu empresa.
 - **`contabilidade-para-*.html`** — páginas por ramo: profissional PJ, saúde, engenharia e
   arquitetura, TI/marketing/consultoria e advocacia (desde 14/11/2026). *(geradas)*
+- **`nossa-tecnologia.html`** — o que a tecnologia da Prospera faz, item por item (Receita, certidões,
+  certificado, NFS-e, Junta Comercial, conferência com IA, Portal do Cliente). *(gerada, desde 16/11/2026)*
 - **`blog/`** — blog com posts sobre contabilidade e impostos (no ar desde 23/10/2026). *(gerado)*
 
 ## Como funciona
 
 - Hospedado no **GitHub Pages**: todo `git push` na `main` publica em ~1 minuto.
 - As páginas da home, calculadora e guia são arquivos HTML únicos (logo em base64).
-- As páginas **geradas** (ramos e blog) nascem de textos em Markdown na pasta `_conteudo/`:
+- As páginas **geradas** (ramos, páginas avulsas como "Nossa tecnologia" e blog) nascem de textos em Markdown
+  na pasta `_conteudo/`:
   edite o `.md` e rode
 
   ```bash

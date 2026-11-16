@@ -6,6 +6,7 @@
 //
 // Lê _conteudo/ e grava (sobrescreve) os arquivos GERADOS:
 //   - contabilidade-para-*.html  ← _conteudo/ramos/*.md
+//   - <endereco>.html            ← _conteudo/paginas/<endereco>.md (páginas avulsas, ex.: nossa-tecnologia)
 //   - blog/index.html, blog/<slug>.html, blog/feed.xml  ← _conteudo/blog/AAAA-MM-DD-slug.md
 //   - sitemap.xml
 //   - trechos marcados do index.html: <!-- BLOG:NAV -->, <!-- BLOG:NOVIDADES -->,
@@ -95,6 +96,23 @@ const ramos = listar(DIR_RAMOS).filter((f) => f.endsWith('.md')).map((f) => {
   return { ...dados, slug, arquivo: arq, corpo, url: `/${slug}.html`, ordem: Number(dados.ordem) || 99 };
 }).sort((a, b) => a.ordem - b.ordem);
 
+// ---------- páginas avulsas (ex.: "Nossa tecnologia") ----------
+// _conteudo/paginas/<endereco>.md → /<endereco>.html. Levam a marca PAGINA_GERADA no HTML: é por ela que o build
+// sabe que pode apagar a página quando o .md some (as páginas feitas à mão nunca têm essa marca).
+const DIR_PAGINAS = '_conteudo/paginas';
+const PAGINA_GERADA = (arq) => `<!-- pagina-gerada: ${arq} (edite o .md e rode o build) -->`;
+const RESERVADOS = ['index', 'calculadora', 'guia-cnpj', '404'];
+const paginas = listar(DIR_PAGINAS).filter((f) => f.endsWith('.md')).map((f) => {
+  const arq = `${DIR_PAGINAS}/${f}`;
+  const { dados, corpo } = frontMatter(ler(arq), arq);
+  exigir(dados, ['titulo', 'titulo_seo', 'resumo', 'eyebrow', 'mensagem_whatsapp'], arq);
+  const slug = f.replace(/\.md$/, '');
+  if (!/^[a-z0-9-]+$/.test(slug)) erros.push(`${arq}: o nome do arquivo deve ter só minúsculas, números e hífen`);
+  if (RESERVADOS.includes(slug) || slug.startsWith('contabilidade-para-')) erros.push(`${arq}: o endereço "${slug}" é de outra página do site`);
+  if (dados.resumo && dados.resumo.length > 160) erros.push(`${arq}: resumo com ${dados.resumo.length} caracteres (máximo 160 — é o texto que aparece no Google)`);
+  return { ...dados, slug, arquivo: arq, corpo, url: `/${slug}.html` };
+});
+
 // ---------- posts do blog ----------
 const DIR_BLOG = '_conteudo/blog';
 const hoje = hojeISO();
@@ -162,6 +180,37 @@ ${md(r.corpo)}
     </div>`;
   const jsonld = { '@context': 'https://schema.org', '@type': 'WebPage', name: r.titulo_seo, description: r.resumo, url: SITE + r.url, publisher: ORG };
   gravacoes.set(r.url.slice(1), pagina({ ...base(false), titulo_seo: esc(r.titulo_seo), descricao: esc(r.resumo), url: SITE + r.url, og_tipo: 'website', og_titulo: esc(r.titulo_seo), jsonld: JSON.stringify(jsonld), conteudo, wa_link: waLink(r.mensagem_whatsapp) }));
+}
+
+// ---------- gerar páginas avulsas ----------
+for (const p of paginas) {
+  const conteudo = `${PAGINA_GERADA(p.arquivo)}
+    <section class="page-hero">
+      <div class="wrap narrow">
+        <span class="eyebrow">${esc(p.eyebrow)}</span>
+        <h1>${esc(p.titulo)}</h1>
+        <p class="lead">${esc(p.resumo)}</p>
+        <div class="hero-actions">
+          <a class="btn btn-wa" href="${waLink(p.mensagem_whatsapp)}" target="_blank" rel="noopener">${ICONE_WA} Falar no WhatsApp</a>
+          <a class="btn btn-outline" href="/#proposta">Peça uma proposta</a>
+        </div>
+      </div>
+    </section>
+    <div class="wrap narrow">
+      <article class="artigo">
+${md(p.corpo)}
+      </article>
+      <div class="cta">
+        <h2>Vamos cuidar da sua empresa?</h2>
+        <p>Conte como é o seu negócio e receba uma orientação inicial sem compromisso — em linguagem simples.</p>
+        <div class="btns">
+          <a class="btn btn-wa" href="${waLink(p.mensagem_whatsapp)}" target="_blank" rel="noopener">${ICONE_WA} Falar no WhatsApp</a>
+          <a class="btn btn-ghost-light" href="/#proposta">Peça uma proposta</a>
+        </div>
+      </div>
+    </div>`;
+  const jsonld = { '@context': 'https://schema.org', '@type': 'WebPage', name: p.titulo_seo, description: p.resumo, url: SITE + p.url, publisher: ORG };
+  gravacoes.set(p.url.slice(1), pagina({ ...base(false), titulo_seo: esc(p.titulo_seo), descricao: esc(p.resumo), url: SITE + p.url, og_tipo: 'website', og_titulo: esc(p.titulo_seo), jsonld: JSON.stringify(jsonld), conteudo, wa_link: waLink(p.mensagem_whatsapp) }));
 }
 
 // ---------- gerar blog ----------
@@ -237,6 +286,7 @@ ${itens}
 // ---------- sitemap ----------
 const urlsSitemap = [
   ...PAGINAS_FIXAS.map((u) => ({ loc: SITE + u })),
+  ...paginas.map((p) => ({ loc: SITE + p.url })),
   ...ramos.map((r) => ({ loc: SITE + r.url })),
   ...(temBlog ? [{ loc: SITE + '/blog/', lastmod: posts[0].atualizado || posts[0].data }] : []),
   ...posts.map((p) => ({ loc: SITE + p.url, lastmod: p.atualizado || p.data })),
@@ -298,6 +348,7 @@ for (const [rel, conteudo] of gravacoes) {
 const apagados = [];
 for (const f of fs.readdirSync(RAIZ)) {
   if (/^contabilidade-para-[a-z0-9-]+\.html$/.test(f) && !gravacoes.has(f)) { fs.unlinkSync(path.join(RAIZ, f)); apagados.push(f); }
+  else if (/\.html$/.test(f) && !gravacoes.has(f) && ler(f).includes('<!-- pagina-gerada: ')) { fs.unlinkSync(path.join(RAIZ, f)); apagados.push(f); }
 }
 if (existe('blog')) {
   for (const f of fs.readdirSync(path.join(RAIZ, 'blog'))) {
@@ -306,6 +357,6 @@ if (existe('blog')) {
   }
   if (!fs.readdirSync(path.join(RAIZ, 'blog')).length) fs.rmdirSync(path.join(RAIZ, 'blog'));
 }
-console.log(`✅ Build ok — ${ramos.length} página(s) de ramo, ${posts.length} post(s).`);
+console.log(`✅ Build ok — ${ramos.length} página(s) de ramo, ${paginas.length} página(s) avulsa(s), ${posts.length} post(s).`);
 console.log(alterados.length ? `   Alterados: ${alterados.join(', ')}` : '   Nenhum arquivo mudou.');
 if (apagados.length) console.log(`   Apagados (sem .md de origem): ${apagados.join(', ')}`);
