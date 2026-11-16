@@ -1,5 +1,6 @@
 ---
 titulo: NFS-e Nacional: obrigatória para o Simples a partir de 1º de novembro
+titulo_seo: NFS-e Nacional: obrigatória no Simples desde 1º/11/2026
 resumo: A partir de 1º/11/2026, empresas do Simples Nacional emitem a nota de serviço pelo Emissor Nacional. Veja o que muda e o que fazer agora.
 data: 2026-10-23
 categoria: Notas fiscais

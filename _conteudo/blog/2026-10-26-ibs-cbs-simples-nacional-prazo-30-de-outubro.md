@@ -1,5 +1,6 @@
 ---
 titulo: IBS e CBS no Simples Nacional: prazo para escolher termina em 30/10
+titulo_seo: IBS e CBS no Simples: prazo para escolher até 30/10
 resumo: Até 30/10/2026, a empresa do Simples decide se paga IBS e CBS fora do DAS de janeiro a junho de 2027. Veja quem deve olhar com cuidado.
 data: 2026-10-26
 categoria: Reforma Tributária

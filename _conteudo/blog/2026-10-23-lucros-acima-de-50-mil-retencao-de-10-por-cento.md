@@ -1,5 +1,6 @@
 ---
 titulo: Lucros acima de R$ 50 mil por mês: o que mudou para o sócio em 2026
+titulo_seo: Lucros acima de R$ 50 mil por mês: o que mudou em 2026
 resumo: A Lei 15.270/2025 criou retenção de 10% sobre lucros acima de R$ 50 mil/mês por sócio. Veja como fica no Simples, o que está em discussão e como planejar.
 data: 2026-10-23
 categoria: Lucros e pró-labore

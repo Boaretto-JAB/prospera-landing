@@ -1,6 +1,6 @@
 ---
 titulo: Boleto falso do DAS: como saber se a cobrança é verdadeira
-resumo: A Receita não manda cobrança nem boleto por WhatsApp, SMS ou link. Veja como conferir se existe dívida de verdade e o que fazer ao receber uma mensagem suspeita.
+resumo: A Receita não manda cobrança nem boleto por WhatsApp, SMS ou link. Veja como conferir se a dívida existe e o que fazer com uma mensagem suspeita.
 data: 2026-11-02
 categoria: Gestão
 ---

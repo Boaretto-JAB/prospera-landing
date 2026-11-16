@@ -1,5 +1,6 @@
 ---
 titulo: Fator R: como pagar a partir de 6% (e não 15,5%) no Simples Nacional
+titulo_seo: Fator R no Simples: como pagar 6% em vez de 15,5%
 resumo: Entenda o Fator R, a conta que decide se a sua empresa de serviço paga pelo Anexo III ou pelo Anexo V do Simples — com um exemplo em números.
 data: 2026-10-23
 categoria: Simples Nacional
