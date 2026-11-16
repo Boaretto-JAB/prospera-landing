@@ -109,9 +109,10 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 - **Faixa de destaques**: 15+ anos de experiência de cada sócio · 4 estados com clientes ·
   100% digital. (Os sócios **não** querem mostrar o número de empresas por enquanto.)
 - **01 Sobre** + 3 pilares. Desde 14/11/2026 (pedido do João) o texto fala nos **três sócios**, cada um com mais de
-  15 anos de experiência: as contadoras Solange C. F. Boaretto e Taynara M. Bugança (áreas contábil, fiscal, DP,
-  gestão financeira e controladoria) e o engenheiro de produção mecânica João Augusto Boaretto (gestão, tecnologia e
-  finanças). O rodapé continua com as duas **responsáveis técnicas** (CRC), que são só as contadoras.
+  15 anos de experiência. Desde 16/11/2026 (decisão do João) as áreas são divididas como na apresentação comercial:
+  Solange C. F. Boaretto nas áreas contábil e fiscal, Taynara M. Bugança no departamento pessoal (as duas são as
+  **responsáveis técnicas**, CRC no rodapé) e o engenheiro de produção mecânica João Augusto Boaretto na gestão
+  financeira (dos clientes e do escritório) e na tecnologia. Formação de cada um: página `equipe.html`.
 - **02 Serviços**: 6 cards + `<!-- RAMOS:SERVICOS -->` (links das páginas de ramo).
 - **03 Tecnologia a seu favor** (`#tecnologia`): Caixa Postal/DCTFWeb, certidões,
   certificado/procuração, emissor NFS-e, conferência com IA, Portal do Cliente.
