@@ -56,7 +56,8 @@ Calculadora e o Guia do CNPJ continuam sendo do Simples/prestadores, porque é o
 | `robots.txt` | Libera o site para buscadores e aponta o sitemap. | À mão (raramente). |
 | `assets/` | `logo.png`, `favicon.png` (extraídos do base64, mesmos bytes), `og-image.jpg` (1200×630, prévia de link), `pagina.css`/`pagina.js` (páginas geradas), `contador.js` (cliques). | À mão. |
 | `_conteudo/ramos/` | Textos das páginas "Contabilidade para…" (Markdown + cabeçalho). | À mão. |
-| `_conteudo/paginas/` | Páginas avulsas (`<endereco>.md` → `/<endereco>.html`). Hoje: `nossa-tecnologia.md` e `equipe.md` (16/11/2026). | À mão + rodar build. |
+| `_conteudo/paginas/` | Páginas avulsas (`<endereco>.md` → `/<endereco>.html`). Hoje: `nossa-tecnologia.md`, `equipe.md` e `politica-de-privacidade.md` (16/11/2026). | À mão + rodar build. |
+| `politica-de-privacidade.html` | Política de privacidade (LGPD). Link **"Política de privacidade"** no rodapé de todas as páginas (coluna Navegação na home e nas geradas; linha de links na calculadora e no Guia). Ver seção 8c. | **Gerada** — edite `_conteudo/paginas/politica-de-privacidade.md`. |
 | `nossa-tecnologia.html` | Página "Nossa tecnologia". | **Gerada** — edite `_conteudo/paginas/nossa-tecnologia.md`. |
 | `equipe.html` | Página "Nossa equipe" (os 3 sócios, CRCs das contadoras), **sem fotos por enquanto** (decisão do João, 16/11/2026: as fotos entram depois). | **Gerada** — edite `_conteudo/paginas/equipe.md`. |
 | `_conteudo/blog/` | Posts do blog (`AAAA-MM-DD-endereco.md`). | À mão / tarefa semanal. |
@@ -276,6 +277,18 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   `google-site-verification` no `<head>` do `index.html` (25/10/2026, conta
   contato@prospera-contabil.com). **Não apague essa tag** — sem ela o Google desverifica o site.
 - 25/10/2026: sitemap enviado e indexação da home e do `/blog/` solicitada.
+
+## 8c. Política de privacidade (16/11/2026)
+
+- Página `politica-de-privacidade.html`, pedida para o **LinkedIn**: o pedido de acesso à API (publicação automática
+  na página da empresa pelo painel da Agência) exige o link de uma política de privacidade. A Meta (Instagram) também
+  aceita o mesmo link.
+- **Só afirma o que é verdade hoje:** sem cookies, GoatCounter (não guarda IP), Google Fonts (o Google recebe o IP),
+  GitHub Pages (registra IP por segurança), formulário e calculadora que só abrem o WhatsApp, e a publicação
+  automática que guarda a autorização cifrada e não coleta dados de seguidores. **Mudou o site ou um sistema
+  (cookie, formulário que grava, novo contador, anúncios)? Revise a página e a data "Última atualização".**
+- Artigos da LGPD citados (7º II/V/VI, 11 II "a", 16 I, 18, 19 II, 39, 41, 48) conferidos no Planalto em 16/11/2026.
+- Encarregado (LGPD, art. 41) indicado na página: **João Augusto Boaretto**, pelo contato@prospera-contabil.com.
 
 ---
 
