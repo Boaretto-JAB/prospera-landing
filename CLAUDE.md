@@ -76,7 +76,7 @@ Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
 - `index.html`: linha **10** (favicon), **467** e **530** (logo) — 1074 linhas no total (16/11/2026)
-- `calculadora.html`: linha **19** (favicon), **147** (logo) — 419 linhas (05/11/2026)
+- `calculadora.html`: linha **19** (favicon), **150** (logo) — 456 linhas (16/11/2026)
 - `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 255 linhas (05/11/2026)
 
 As páginas **geradas** usam `/assets/logo.png` e `/assets/favicon.png` (mesma imagem).
@@ -155,12 +155,21 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 
 Calcula o **DAS**, o **pró-labore líquido** e quanto **sobra para o sócio**, em tempo real.
 Valores **vigentes em 2026**. Campos abrem em branco (vazio = zero); Anexo começa em III.
+Três botões: **Anexo III**, **Anexo IV** (advocacia, desde 16/11/2026) e **Anexo V**.
+`calculadora.html?anexo=IV` (ou `III`/`V`) já abre no anexo escolhido — a página de advocacia usa esse link.
 
 **Fórmulas (não quebrar):**
 - **DAS** = faturamento × alíquota efetiva; **efetiva** = (RBT12 × nominal − dedução) ÷ RBT12;
-  **RBT12** = faturamento × 12. Tabelas `ANEXO_III`/`ANEXO_V` no JS.
+  **RBT12** = faturamento × 12. Tabelas `ANEXO_III`/`ANEXO_IV`/`ANEXO_V` no JS.
 - **Fator R** = (pró-labore + folha + encargos) ÷ faturamento. No Anexo V, Fator R ≥ 28% →
-  tributa pelo Anexo III.
+  tributa pelo Anexo III. No Anexo IV **não se aplica** (a advocacia fica sempre nele).
+- **Anexo IV (advocacia — LC 123, art. 18, § 5º-C, VII):** tabela 4,5% / 9% (−8.100) / 10,2% (−12.420) /
+  14% (−39.780) / 22% (−183.780) / 33% (−828.000) (LC 155/2016). O **INSS patronal (CPP) fica fora do DAS**
+  e aparece no quadro "INSS patronal (fora do DAS)": **20% sobre o pró-labore** (sem teto) + **(20% + RAT 1%)
+  sobre a folha** (salário + 1/12 de 13º + 1/12 de férias com 1/3) — `CPP_PATRONAL`, `RAT_ADVOCACIA`, `cppFolha()`.
+  RAT 1% = risco leve do CNAE 6911-7/01 (Decreto 3.048, Anexo V), sem o FAP (multiplicador 0,5 a 2,0 de cada
+  empresa). Sem "terceiros"/Sistema S (LC 123, art. 13, § 3º). Lucro = faturamento − DAS − CPP − pró-labore −
+  folha − despesas.
 - **INSS pró-labore:** 11%, teto R$ 8.475,55. **IRPF (Lei 15.270/2025):** isento até
   R$ 5.000; redutor `978,62 − 0,133145 × rendimento` até R$ 7.350; acima, tabela cheia.
 - **Encargos da folha ≈ 29%.**
@@ -175,6 +184,10 @@ Valores **vigentes em 2026**. Campos abrem em branco (vazio = zero); Anexo come�
   (8,3111%) e **líquido R$ 24.227,69** (sem despesas: R$ 24.577,69).
 - R$ 100.000, Anexo III, pró-labore R$ 1.621 → lucro R$ 85.349,00, **retenção R$ 8.534,90**,
   **líquido R$ 78.256,79**.
+- R$ 30.000, Anexo IV, pró-labore R$ 1.621 → **DAS R$ 2.025,00** (6,75%, igual à apresentação comercial do
+  portal), **INSS patronal R$ 324,20** e **líquido R$ 27.472,49**.
+- R$ 30.000, Anexo IV, pró-labore R$ 1.621, folha R$ 3.000, despesas R$ 500 → **INSS patronal R$ 1.076,70**
+  (324,20 + 752,50) e **líquido R$ 22.349,99**.
 
 > ⚠️ Esses números mudam por ano e por lei. **Antes de alterar qualquer valor fiscal**,
 > pesquise a regra vigente e **informe a fonte** ao dono. Mantenha o aviso de

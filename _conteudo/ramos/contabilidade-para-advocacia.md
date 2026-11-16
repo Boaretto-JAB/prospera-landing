@@ -24,7 +24,7 @@ Advogados que ainda atendem como pessoa física, titulares de sociedade unipesso
 
 No Simples, os serviços advocatícios são tributados pelo **Anexo IV**, que começa em 4,5%. Aqui não existe Fator R: a advocacia fica sempre nesse anexo, seja qual for a folha de pagamento.
 
-O ponto de atenção é o **INSS patronal** (a contribuição previdenciária da empresa). No Anexo IV, ele não entra no DAS, a guia única do Simples: o escritório paga à parte, inclusive 20% sobre o pró-labore dos sócios. Por isso, a conta do Simples precisa somar as duas coisas.
+O ponto de atenção é o **INSS patronal** (a contribuição previdenciária da empresa). No Anexo IV, ele não entra no DAS, a guia única do Simples: o escritório paga à parte, inclusive 20% sobre o pró-labore dos sócios. Por isso, a conta do Simples precisa somar as duas coisas. Faça essa conta com os seus números na nossa [Calculadora do Simples](/calculadora.html?anexo=IV), que já abre no Anexo IV e soma o INSS patronal.
 
 ## Lucro Presumido: base de 32%
 

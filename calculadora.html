@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Calculadora do Simples Nacional · Prospera</title>
-<meta name="description" content="Simule o DAS, o pró-labore e os lucros de prestadores de serviço no Simples Nacional (Anexos III e V). Estimativa para planejamento." />
+<meta name="description" content="Simule o DAS, o pró-labore e os lucros de prestadores de serviço no Simples Nacional (Anexos III, IV e V). Estimativa para planejamento." />
 <link rel="canonical" href="https://prospera-contabil.com/calculadora.html" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="pt_BR" />
 <meta property="og:site_name" content="Prospera Consultoria Contábil" />
 <meta property="og:url" content="https://prospera-contabil.com/calculadora.html" />
 <meta property="og:title" content="Calculadora do Simples Nacional · Prospera" />
-<meta property="og:description" content="Simule o DAS, o pró-labore e quanto sobra para o sócio (Anexos III e V, regras de 2026)." />
+<meta property="og:description" content="Simule o DAS, o pró-labore e quanto sobra para o sócio (Anexos III, IV e V, regras de 2026)." />
 <meta property="og:image" content="https://prospera-contabil.com/assets/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -73,6 +73,9 @@
   .aviso b{color:#5a3d14;}
   .aviso.ok{background:#E9F6F1;border-color:#A8DCC9;border-left-color:#1f7a66;color:#1a5446;}
   .aviso.ok b{color:#15453a;}
+  .aviso.info{background:#EAF1F7;border-color:#BCD0E2;border-left-color:var(--navy);color:#1d3d5a;}
+  .aviso.info b{color:var(--navy-deep);}
+  .seg-hint{font-size:.8rem;color:var(--ink-faint);line-height:1.4;}
 
   .field{margin-top:1.15rem;}
   .field label{display:block;font-family:var(--serif-body);font-size:.95rem;color:var(--ink);margin-bottom:.32rem;letter-spacing:.01em;}
@@ -138,7 +141,7 @@
 <!-- Contador de visitas (GoatCounter: grátis, sem cookies — não exige aviso de cookies) -->
 <script data-goatcounter="https://prospera-contabil.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script src="/assets/contador.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Calculadora do Simples Nacional", "description": "Simule o DAS, o pró-labore e os lucros de prestadores de serviço no Simples Nacional (Anexos III e V).", "url": "https://prospera-contabil.com/calculadora.html", "inLanguage": "pt-BR", "publisher": {"@type": "AccountingService", "name": "Prospera Consultoria Contábil", "url": "https://prospera-contabil.com"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Calculadora do Simples Nacional", "description": "Simule o DAS, o pró-labore e os lucros de prestadores de serviço no Simples Nacional (Anexos III, IV e V).", "url": "https://prospera-contabil.com/calculadora.html", "inLanguage": "pt-BR", "publisher": {"@type": "AccountingService", "name": "Prospera Consultoria Contábil", "url": "https://prospera-contabil.com"}}</script>
 </head>
 <body>
   <header>
@@ -167,9 +170,11 @@
         <p class="seg-label">Anexo do Simples Nacional</p>
         <div class="seg" role="group" aria-label="Escolha do anexo">
           <button type="button" id="btnIII" aria-pressed="true">Anexo III</button>
+          <button type="button" id="btnIV" aria-pressed="false">Anexo IV</button>
           <button type="button" id="btnV" aria-pressed="false">Anexo V</button>
         </div>
-        <div class="aviso" id="avisoV"></div>
+        <p class="seg-hint">Anexos III e V: serviços com Fator R. Anexo IV: advocacia.</p>
+        <div class="aviso" id="avisoAnexo"></div>
 
         <div class="field">
           <label for="fat">Faturamento mensal médio</label>
@@ -186,7 +191,7 @@
         <div class="field">
           <label for="folha">Folha de funcionários — salário base</label>
           <div class="inp"><span class="pre">R$</span><input type="number" id="folha" min="0" step="100" placeholder="0,00" inputmode="decimal" /></div>
-          <p class="hint">Informe só o <b>salário base</b> da equipe. Eu calculo os encargos do Simples (FGTS, 13º e férias + 1/3 ≈ +29%).</p>
+          <p class="hint">Informe só o <b>salário base</b> da equipe. Eu calculo os encargos do Simples (FGTS, 13º e férias + 1/3 ≈ +29%)<span id="hintFolhaIV" hidden> e, no Anexo IV, também o INSS patronal (20% + RAT 1%), que aparece à parte no resultado</span>.</p>
         </div>
 
         <div class="field">
@@ -218,6 +223,11 @@
               <div class="t">Simples Nacional (DAS)</div>
               <div class="v" id="oDas">R$ 0,00</div>
               <div class="d" id="oDasInfo">Anexo III · 0,00%</div>
+            </div>
+            <div class="node node-out" id="boxCPP" style="display:none;">
+              <div class="t">INSS patronal (fora do DAS)</div>
+              <div class="v" id="oCPP">R$ 0,00</div>
+              <div class="d" id="oCPPInfo">20% sobre o pró-labore</div>
             </div>
             <div class="node node-out">
               <div class="t">Pró-labore</div>
@@ -265,7 +275,7 @@
           </a>
         </div>
 
-        <p class="disc">Estimativa para fins de planejamento, com base nas tabelas vigentes em 2026 (Anexos III e V, INSS, a nova regra do IRPF e a retenção sobre lucros acima de R$ 50 mil/mês — Lei 15.270/2025). Não substitui a apuração oficial feita pela sua contabilidade. Dúvidas? <a href="/#contato">Fale com a Prospera</a>.</p>
+        <p class="disc">Estimativa para fins de planejamento, com base nas tabelas vigentes em 2026 (Anexos III, IV e V, INSS, a nova regra do IRPF e a retenção sobre lucros acima de R$ 50 mil/mês — Lei 15.270/2025). No Anexo IV, o INSS patronal usa o RAT de 1% da advocacia, sem o ajuste do FAP. Não substitui a apuração oficial feita pela sua contabilidade. Dúvidas? <a href="/#contato">Fale com a Prospera</a>.</p>
       </section>
     </div>
   </main>
@@ -287,6 +297,10 @@
   var LIMITE_LUCRO_ISENTO=50000, ALIQ_IRRF_LUCRO=0.10; // Lei 15.270/2025: acima de R$ 50 mil/mês ao mesmo sócio, 10% sobre o total
   var WA_NUMERO='5549998400684';
   var ANEXO_III=[[180000,0.06,0],[360000,0.112,9360],[720000,0.135,17640],[1800000,0.16,35640],[3600000,0.21,125640],[4800000,0.33,648000]];
+  var ANEXO_IV=[[180000,0.045,0],[360000,0.09,8100],[720000,0.102,12420],[1800000,0.14,39780],[3600000,0.22,183780],[4800000,0.33,828000]];
+  // Anexo IV (LC 123, art. 18, § 5º-C, VII — advocacia): a CPP fica FORA do DAS (Lei 8.212, art. 22):
+  // 20% sobre o pró-labore (sem teto) + 20% e RAT sobre a folha. Terceiros (Sistema S) não: LC 123, art. 13, § 3º.
+  var CPP_PATRONAL=0.20, RAT_ADVOCACIA=0.01; // RAT 1% = risco leve do CNAE 6911-7/01 (Decreto 3.048, Anexo V), FAP 1,0
   var ANEXO_V =[[180000,0.155,0],[360000,0.18,4500],[720000,0.195,9900],[1800000,0.205,17100],[3600000,0.23,62100],[4800000,0.305,540000]];
   var TABELA_IR=[[2259.20,0,0],[2826.65,0.075,169.44],[3751.05,0.15,381.44],[4664.68,0.225,662.77],[Infinity,0.275,896.00]];
 
@@ -319,6 +333,12 @@
     var fgts=sal*0.08, decimo=sal/12, ferias=(sal/12)*(4/3);
     return fgts+decimo+ferias+(decimo+ferias)*0.08; // ≈ 29%
   }
+  // INSS patronal do Anexo IV sobre a folha: salário + 1/12 de 13º + 1/12 de férias com 1/3
+  function cppFolha(sal){
+    if(sal<=0) return 0;
+    return (sal+sal/12+(sal/12)*(4/3))*(CPP_PATRONAL+RAT_ADVOCACIA);
+  }
+  var TABELAS={III:ANEXO_III, IV:ANEXO_IV, V:ANEXO_V};
 
   function calc(){
     var fat=num('fat'), pl=num('pl'), sal=num('folha'), desp=num('desp');
@@ -330,15 +350,22 @@
     var atingiu=fatorR>=0.28;
     // No Anexo V, atingir Fator R >= 28% migra a tributacao para o Anexo III (mais barato)
     var anexoEf=(anexo==='V' && atingiu)?'III':anexo;
-    var a=aliquotaEfetiva(rbt12, anexoEf==='III'?ANEXO_III:ANEXO_V);
+    var a=aliquotaEfetiva(rbt12, TABELAS[anexoEf]);
     var das=fat*a.ef;
-    var lucro=fat-das-pl-folhaTot-desp;
+    // Anexo IV: INSS patronal pago à parte (DCTFWeb), fora do DAS
+    var cppPL=anexo==='IV'?pl*CPP_PATRONAL:0, cppFol=anexo==='IV'?cppFolha(sal):0, cpp=cppPL+cppFol;
+    var lucro=fat-das-cpp-pl-folhaTot-desp;
     var irrfLucro=lucro>LIMITE_LUCRO_ISENTO?lucro*ALIQ_IRRF_LUCRO:0;
     var liquido=lucro-irrfLucro+plLiq;
 
     set('oFat',brl.format(fat));
     set('oDas','− '+brl.format(das));
     set('oDasInfo','Anexo '+anexoEf+((anexo==='V'&&atingiu)?' · Fator R ≥ 28%':'')+' · '+pct(a.ef));
+    var bCPP=document.getElementById('boxCPP');
+    if(anexo==='IV'){
+      bCPP.style.display=''; set('oCPP','− '+brl.format(cpp));
+      set('oCPPInfo','20% sobre o pró-labore: '+brl.format(cppPL)+(sal>0?' · 21% sobre a folha (com 13º e férias): '+brl.format(cppFol):'')+' · pago na DCTFWeb');
+    } else bCPP.style.display='none';
     set('oPL','− '+brl.format(pl));
     set('oPLInfo','INSS '+brl.format(inss)+' · IR '+(ir>0?brl.format(ir):'isento'));
 
@@ -354,17 +381,22 @@
     set('oLucroInfo',irrfLucro>0?'retenção de 10% na fonte: − '+brl.format(irrfLucro):'isento de IR até R$ 50 mil/mês');
     document.getElementById('oNotaLucro').hidden=!(irrfLucro>0);
     set('oLiquido',brl.format(liquido));
-    atualizarWhatsApp({fat:fat,pl:pl,sal:sal,desp:desp,anexoEf:anexoEf,fatorR:fatorR,das:das,aliq:a.ef,irrfLucro:irrfLucro,liquido:liquido});
+    atualizarWhatsApp({fat:fat,pl:pl,sal:sal,desp:desp,anexoEf:anexoEf,fatorR:fatorR,das:das,aliq:a.ef,cpp:cpp,irrfLucro:irrfLucro,liquido:liquido});
 
-    set('oFatorR','Fator R: '+pct(fatorR)+' (folha ÷ faturamento)');
+    set('oFatorR',anexo==='IV'?'Fator R: não se aplica ao Anexo IV':'Fator R: '+pct(fatorR)+' (folha ÷ faturamento)');
     var chip=document.getElementById('oFatorChip');
     if(anexo==='V'){
       if(atingiu){ chip.className='chip ok'; chip.textContent='tributado pelo Anexo III'; }
       else{ chip.className='chip no'; chip.textContent='tributado pelo Anexo V'; }
-    } else { chip.className='chip neutral'; chip.textContent='Anexo III'; }
+    } else if(anexo==='IV'){ chip.className='chip neutral'; chip.textContent='sempre no Anexo IV'; }
+    else { chip.className='chip neutral'; chip.textContent='Anexo III'; }
 
-    var av=document.getElementById('avisoV');
-    if(anexo==='V'){
+    var av=document.getElementById('avisoAnexo');
+    if(anexo==='IV'){
+      av.classList.remove('ok'); av.classList.add('info');
+      av.innerHTML='<span>⚖️</span><span><b>Advocacia: Anexo IV, sem Fator R.</b> O DAS não inclui o <b>INSS patronal</b>: o escritório paga à parte 20% sobre o pró-labore e, se tiver funcionários, 20% + RAT sobre a folha — já somado no resultado.</span>';
+    } else if(anexo==='V'){
+      av.classList.remove('info');
       if(atingiu){
         av.classList.add('ok');
         av.innerHTML='<span>✓</span><span><b>Fator R atingido ('+pct(fatorR)+' ≥ 28%).</b> Com essa folha + pró-labore, a tributação passa para o <b>Anexo III</b> (mais barato) — já aplicado no cálculo acima.</span>';
@@ -384,7 +416,7 @@
     } else {
       var linhas=[
         'Olá! Fiz uma simulação na calculadora do site da Prospera:',
-        '• Anexo escolhido: '+anexo+(anexo!==r.anexoEf?' (tributado pelo '+r.anexoEf+')':'')+' · Fator R '+pct(r.fatorR),
+        '• Anexo escolhido: '+anexo+(anexo!==r.anexoEf?' (tributado pelo '+r.anexoEf+')':'')+(anexo==='IV'?' (advocacia, sem Fator R)':' · Fator R '+pct(r.fatorR)),
         '• Faturamento mensal: '+brl.format(r.fat),
         '• Pró-labore: '+brl.format(r.pl),
         '• Folha (salário base): '+brl.format(r.sal),
@@ -393,6 +425,7 @@
         'Resultado estimado:',
         '• DAS: '+brl.format(r.das)+' ('+pct(r.aliq)+')'
       ];
+      if(r.cpp>0) linhas.push('• INSS patronal (fora do DAS): '+brl.format(r.cpp));
       if(r.irrfLucro>0) linhas.push('• Retenção sobre lucros (acima de R$ 50 mil): '+brl.format(r.irrfLucro));
       linhas.push('• Líquido ao sócio: '+brl.format(r.liquido)+'/mês','','Gostaria de conversar sobre o meu caso.');
       txt=linhas.join('\n');
@@ -402,17 +435,21 @@
 
   function pickAnexo(which){
     anexo=which;
-    document.getElementById('btnIII').setAttribute('aria-pressed', which==='III');
-    document.getElementById('btnV').setAttribute('aria-pressed', which==='V');
-    document.getElementById('avisoV').classList.toggle('show', which==='V');
+    ['III','IV','V'].forEach(function(x){ document.getElementById('btn'+x).setAttribute('aria-pressed', which===x); });
+    document.getElementById('avisoAnexo').classList.toggle('show', which!=='III');
+    document.getElementById('hintFolhaIV').hidden=(which!=='IV');
     calc();
   }
-  document.getElementById('btnIII').addEventListener('click',function(){pickAnexo('III');});
-  document.getElementById('btnV').addEventListener('click',function(){pickAnexo('V');});
+  ['III','IV','V'].forEach(function(x){
+    document.getElementById('btn'+x).addEventListener('click',function(){pickAnexo(x);});
+  });
   ['fat','pl','folha','desp'].forEach(function(id){
     document.getElementById(id).addEventListener('input',calc);
   });
-  calc();
+  // /calculadora.html?anexo=IV já abre no Anexo IV (link da página de advocacia)
+  var inicial='III';
+  try{ var q=(new URLSearchParams(location.search).get('anexo')||'').toUpperCase(); if(TABELAS[q]) inicial=q; }catch(e){}
+  pickAnexo(inicial);
 })();
 </script>
 </body>

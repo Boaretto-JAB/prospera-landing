@@ -10,8 +10,9 @@ serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público am
 - **`index.html`** — home: apresentação, destaques, serviços, tecnologia, dúvidas,
   formulário **"Peça uma proposta"** (abre o WhatsApp) e contato. Botão **Área do cliente**
   leva ao Portal do Cliente (Onvio).
-- **`calculadora.html`** — calculadora do Simples Nacional (DAS, pró-labore, Fator R,
-  lucros e a retenção acima de R$ 50 mil/mês). Botão **"Enviar esta simulação"** manda os
+- **`calculadora.html`** — calculadora do Simples Nacional, **Anexos III, IV e V** (DAS, pró-labore, Fator R,
+  lucros e a retenção acima de R$ 50 mil/mês). No **Anexo IV (advocacia)** soma o INSS patronal, que fica fora
+  do DAS; `calculadora.html?anexo=IV` já abre nele (link da página de advocacia). Botão **"Enviar esta simulação"** manda os
   números pelo WhatsApp. É uma estimativa e **não substitui a apuração oficial**.
 - **`guia-cnpj.html`** — Guia do CNPJ: 7 temas educativos para quem abriu empresa.
 - **`contabilidade-para-*.html`** — páginas por ramo: profissional PJ, saúde, engenharia e
