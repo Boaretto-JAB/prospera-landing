@@ -60,6 +60,7 @@ Calculadora e o Guia do CNPJ continuam sendo do Simples/prestadores, porque é o
 | `politica-de-privacidade.html` | Política de privacidade (LGPD). Link **"Política de privacidade"** no rodapé de todas as páginas (coluna Navegação na home e nas geradas; linha de links na calculadora e no Guia). Ver seção 8c. | **Gerada** — edite `_conteudo/paginas/politica-de-privacidade.md`. |
 | `nossa-tecnologia.html` | Página "Nossa tecnologia". | **Gerada** — edite `_conteudo/paginas/nossa-tecnologia.md`. |
 | `equipe.html` | Página "Nossa equipe" (os 3 sócios, CRCs das contadoras), **sem fotos por enquanto** (decisão do João, 16/11/2026: as fotos entram depois). | **Gerada** — edite `_conteudo/paginas/equipe.md`. |
+| `contabilidade-meio-oeste-sc.html` | Página "Atendemos o Meio-Oeste" (16/11/2026): UMA página para as 12 cidades escolhidas pelo João (Capinzal, Ouro, Zortéa, Piratuba, Ipira, Joaçaba, Herval d'Oeste, Luzerna, Erval Velho, Ibicaré, Treze Tílias, Campos Novos). Nunca uma página por cidade ("doorway", o Google rebaixa). Sem ISS por cidade sem conferir na prefeitura. | **Gerada** — edite `_conteudo/paginas/contabilidade-meio-oeste-sc.md`. |
 | `_conteudo/blog/` | Posts do blog (`AAAA-MM-DD-endereco.md`). | À mão / tarefa semanal. |
 | `_conteudo/GUIA-EDITORIAL-BLOG.md` | Regras de escrita e exatidão do blog, formato e pauta. | À mão. |
 | `_conteudo/rascunhos/pacotes.md` | Rascunho dos pacotes (decisões pendentes das sócias). | À mão. |
@@ -74,7 +75,7 @@ O logo e o favicon das 3 páginas feitas à mão estão embutidos como base64 em
 Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
-- `index.html`: linha **10** (favicon), **452** e **515** (logo) — 1056 linhas no total (16/11/2026)
+- `index.html`: linha **10** (favicon), **467** e **530** (logo) — 1074 linhas no total (16/11/2026)
 - `calculadora.html`: linha **19** (favicon), **147** (logo) — 419 linhas (05/11/2026)
 - `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 255 linhas (05/11/2026)
 
@@ -279,7 +280,8 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
 
 - **16/11/2026 (Etapa 3 da Agência):** descrição da home encurtada (146 caracteres), título e resumo da página de
   advocacia dentro do limite, e **cidades atendidas** no `areaServed` dos dados estruturados da home (Capinzal,
-  Joaçaba, Campos Novos, Santa Catarina e Brasil — a presença local decidida em 26/10/2026), já que a Prospera não
+  Joaçaba, Campos Novos, Santa Catarina e Brasil — a presença local decidida em 26/10/2026; **ampliado no mesmo dia para as
+  12 cidades da página do Meio-Oeste**), já que a Prospera não
   tem Perfil da Empresa no Google. Posts: campo opcional **`titulo_seo`** (até 60) no cabeçalho, usado na aba e no
   Google quando o título do artigo passa de 60; o título do artigo continua o mesmo.
 

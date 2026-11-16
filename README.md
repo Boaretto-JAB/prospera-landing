@@ -22,6 +22,7 @@ serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público am
 - **`politica-de-privacidade.html`** — política de privacidade (LGPD), com link no rodapé de todas as páginas.
   Exigida pelo LinkedIn para a publicação automática do painel da Agência. *(gerada, 16/11/2026)*
 - A home ganhou a seção **Pacotes** (Essencial, Gestão e Estratégico, sem preço) em 16/11/2026.
+- **`contabilidade-meio-oeste-sc.html`** — "Atendemos o Meio-Oeste": as 12 cidades da região e como funciona o atendimento a distância. *(gerada, desde 16/11/2026)*
 - **`blog/`** — blog com posts sobre contabilidade e impostos (no ar desde 23/10/2026). *(gerado)*
 
 ## Como funciona
