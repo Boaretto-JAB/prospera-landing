@@ -48,7 +48,7 @@ Do outro lado, a mesma lei ampliou a isenção do Imposto de Renda sobre salári
 
 ## Fontes
 
-- [Lei nº 15.270, de 26 de novembro de 2025 (texto publicado)](https://www2.camara.leg.br/legin/fed/lei/2025/lei-15270-26-novembro-2025-798354-publicacaooriginal-177117-pl.html) — consultado em 23/10/2026
+- [Lei nº 15.270, de 26 de novembro de 2025 (texto no Planalto)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm) — consultado em 16/11/2026
 - [Receita Federal — Perguntas e Respostas sobre tributação de altas rendas: lucros e dividendos (PDF)](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/receita-federal-lanca-perguntas-e-respostas-sobre-tributacao-de-altas-rendas-consideracoes-sobre-lucros-e-dividendos/manual_padrao_rfb_per_tributacao_sutri_v2.pdf) — consultado em 23/10/2026
 - [ConJur — Lei 15.270/2025, dividendos e Simples Nacional](https://conjur.com.br/2025-dez-04/lei-15-270-2025-dividendos-e-simples-nacional/) — consultado em 23/10/2026
 - [Contábeis — Dividendos no Simples Nacional e a nova Lei 15.270](https://www.contabeis.com.br/noticias/74441/dividendos-no-simples-nacional-e-a-nova-lei-15-270/) — consultado em 23/10/2026

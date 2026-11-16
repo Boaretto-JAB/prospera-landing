@@ -57,4 +57,4 @@ Aumentando o pró-labore, o sócio paga um pouco mais de INSS — mas o DAS cai 
 ## Fontes
 
 - [Lei Complementar nº 123/2006 — Estatuto da Microempresa (art. 18, §§ 5º-J, 5º-M e 24)](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) — consultado em 23/10/2026
-- [Lei nº 15.270/2025 — isenção do IR até R$ 5 mil (texto publicado)](https://www2.camara.leg.br/legin/fed/lei/2025/lei-15270-26-novembro-2025-798354-publicacaooriginal-177117-pl.html) — consultado em 23/10/2026
+- [Lei nº 15.270/2025 — isenção do IR até R$ 5 mil (texto no Planalto)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm) — consultado em 16/11/2026
