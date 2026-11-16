@@ -215,6 +215,8 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   continua valendo do mesmo jeito. Por isso: mantenha o padrão `_conteudo/blog/AAAA-MM-DD-endereco.md` +
   `blog/<endereco>.html` gerado no mesmo PR (a prévia do portal é essa página) e não coloque nada que não seja
   do blog num PR "Blog: …" (o portal avisa, mas publica o PR inteiro).
+  **1ª aprovação pelo portal: PR #10 em 16/11/2026** (troca da fonte da Lei 15.270 nos posts do Fator R e dos lucros
+  acima de R$ 50 mil): Merge `03d835c` às 07h35 com o comentário "✅ Aprovado no portal da Agência…", conferido no ar.
 - **Tarefa agendada semanal** "Blog semanal da Prospera" (id `trig_01K3GpzZqcZoDNr4oyApcu5G`):
   toda **segunda às 7h38 (Brasília)** abre uma sessão nova que pesquisa as novidades, escreve
   1 post, roda o build e abre (ou acrescenta ao) PR pendente. Avisa o dono por push/e-mail.
