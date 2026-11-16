@@ -197,6 +197,15 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   "Blog: …"**; o João (dono) lê e clica em **Merge** para publicar (~1 min).
   Cuidado com `git add -A` em outra branch enquanto há posts não commitados na pasta — foi
   assim que, em 23/10, 3 posts escaparam para a `main` por alguns minutos.
+- **Aprovar também pelo portal (desde 16/11/2026):** a Agência do portal
+  (`agencia.prospera-contabil.com` → Conteúdo → Fila, monorepo `prospera-suite`, `apps/agencia/src/lib/blog.ts`)
+  lista os PRs "Blog: …" abertos **da própria branch deste repositório** (PR de fork é ignorado), mostra a
+  prévia da página gerada e deixa o mestre fazer o **Merge** ("Aprovar e publicar no site"), comentar um
+  **pedido de ajuste** (comentário que começa com `**Pedido de ajuste (portal da Agência):**`) ou **fechar** o
+  PR (Descartar). Usa um token fine-grained só deste repositório (`GITHUB_BLOG_TOKEN` na Vercel). O GitHub
+  continua valendo do mesmo jeito. Por isso: mantenha o padrão `_conteudo/blog/AAAA-MM-DD-endereco.md` +
+  `blog/<endereco>.html` gerado no mesmo PR (a prévia do portal é essa página) e não coloque nada que não seja
+  do blog num PR "Blog: …" (o portal avisa, mas publica o PR inteiro).
 - **Tarefa agendada semanal** "Blog semanal da Prospera" (id `trig_01K3GpzZqcZoDNr4oyApcu5G`):
   toda **segunda às 7h38 (Brasília)** abre uma sessão nova que pesquisa as novidades, escreve
   1 post, roda o build e abre (ou acrescenta ao) PR pendente. Avisa o dono por push/e-mail.

@@ -32,8 +32,9 @@ serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público am
   O build grava as páginas, o `sitemap.xml` e partes marcadas da home, e avisa se algum
   texto tiver problema.
 - **Blog:** toda segunda uma tarefa agendada escreve um post novo e abre um **Pull Request
-  "Blog: …"**. Para publicar, leia o texto e clique em **Merge**. Regras de escrita em
-  `_conteudo/GUIA-EDITORIAL-BLOG.md`.
+  "Blog: …"**. Para publicar, leia o texto e clique em **Merge** — aqui no GitHub ou, desde
+  16/11/2026, em **Conteúdo → Fila** da Agência do portal (`agencia.prospera-contabil.com`, botão
+  "Aprovar e publicar no site"). Regras de escrita em `_conteudo/GUIA-EDITORIAL-BLOG.md`.
 - **Visitas e cliques:** GoatCounter (grátis, sem cookies), código `prospera-contabil`.
 - **Google Search Console:** verificado pela tag `google-site-verification` no `<head>` do
   `index.html` — não apague essa linha.
