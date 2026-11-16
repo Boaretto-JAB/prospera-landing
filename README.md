@@ -18,6 +18,8 @@ serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público am
   arquitetura, TI/marketing/consultoria e advocacia (desde 14/11/2026). *(geradas)*
 - **`nossa-tecnologia.html`** — o que a tecnologia da Prospera faz, item por item (Receita, certidões,
   certificado, NFS-e, Junta Comercial, conferência com IA, Portal do Cliente). *(gerada, desde 16/11/2026)*
+- **`equipe.html`** — os 3 sócios e os CRCs das contadoras (fotos depois). *(gerada, desde 16/11/2026)*
+- A home ganhou a seção **Pacotes** (Essencial, Gestão e Estratégico, sem preço) em 16/11/2026.
 - **`blog/`** — blog com posts sobre contabilidade e impostos (no ar desde 23/10/2026). *(gerado)*
 
 ## Como funciona

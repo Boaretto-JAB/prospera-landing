@@ -56,8 +56,9 @@ Calculadora e o Guia do CNPJ continuam sendo do Simples/prestadores, porque é o
 | `robots.txt` | Libera o site para buscadores e aponta o sitemap. | À mão (raramente). |
 | `assets/` | `logo.png`, `favicon.png` (extraídos do base64, mesmos bytes), `og-image.jpg` (1200×630, prévia de link), `pagina.css`/`pagina.js` (páginas geradas), `contador.js` (cliques). | À mão. |
 | `_conteudo/ramos/` | Textos das páginas "Contabilidade para…" (Markdown + cabeçalho). | À mão. |
-| `_conteudo/paginas/` | Páginas avulsas (`<endereco>.md` → `/<endereco>.html`). Hoje: `nossa-tecnologia.md` (16/11/2026). | À mão + rodar build. |
+| `_conteudo/paginas/` | Páginas avulsas (`<endereco>.md` → `/<endereco>.html`). Hoje: `nossa-tecnologia.md` e `equipe.md` (16/11/2026). | À mão + rodar build. |
 | `nossa-tecnologia.html` | Página "Nossa tecnologia". | **Gerada** — edite `_conteudo/paginas/nossa-tecnologia.md`. |
+| `equipe.html` | Página "Nossa equipe" (os 3 sócios, CRCs das contadoras), **sem fotos por enquanto** (decisão do João, 16/11/2026: as fotos entram depois). | **Gerada** — edite `_conteudo/paginas/equipe.md`. |
 | `_conteudo/blog/` | Posts do blog (`AAAA-MM-DD-endereco.md`). | À mão / tarefa semanal. |
 | `_conteudo/GUIA-EDITORIAL-BLOG.md` | Regras de escrita e exatidão do blog, formato e pauta. | À mão. |
 | `_conteudo/rascunhos/pacotes.md` | Rascunho dos pacotes (decisões pendentes das sócias). | À mão. |
@@ -72,7 +73,7 @@ O logo e o favicon das 3 páginas feitas à mão estão embutidos como base64 em
 Posições atuais (deslizam quando o arquivo muda — confirme com
 `awk '{ if (length($0) > 5000) print NR }' arquivo.html`):
 
-- `index.html`: linha **10** (favicon), **448** e **510** (logo) — 1051 linhas no total (16/11/2026)
+- `index.html`: linha **10** (favicon), **452** e **515** (logo) — 1056 linhas no total (16/11/2026)
 - `calculadora.html`: linha **19** (favicon), **147** (logo) — 419 linhas (05/11/2026)
 - `guia-cnpj.html`: linha **19** (favicon), **125** (logo) — 255 linhas (05/11/2026)
 
@@ -101,6 +102,9 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
 - **Header fixo**: logo + menu (Sobre, Serviços, Calculadora, Guia do CNPJ, [Blog],
   Dúvidas, Contato) + botão **Área do cliente** (Onvio). Menu vira hambúrguer em ≤1100px;
   o botão Área do cliente some em ≤760px (fica no menu do celular).
+  ⚠️ O menu do topo da home está **no limite**: com um 8º item ("Pacotes", testado em 16/11/2026) ele encosta
+  no logo (4–9 px de folga em qualquer largura, porque o `.wrap` tem largura máxima). Por isso "Pacotes" fica
+  só no menu do celular e no rodapé da home. Nas páginas geradas (sem "Dúvidas") o topo tem "Pacotes" e sobra espaço.
 - **Hero**: headline + botões "Falar no WhatsApp" e "Peça uma proposta" (`#proposta`).
 - **Faixa de destaques**: 15+ anos de experiência de cada sócio · 4 estados com clientes ·
   100% digital. (Os sócios **não** querem mostrar o número de empresas por enquanto.)
@@ -114,8 +118,12 @@ Estilo **clássico e elegante**; tema claro (marfim) com painéis azul-marinho.
   Só afirme o que de fato roda nos sistemas da Prospera. No fim da seção, link para a página
   **Nossa tecnologia** (`/nossa-tecnologia.html`, desde 16/11/2026), que detalha cada item e também
   fala da Junta Comercial. O rodapé ("Navegação") da home e das páginas geradas também tem o link.
-- **Depoimentos** e **Pacotes**: blocos prontos, **comentados (fora do ar)**. Para publicar,
-  ver as instruções dentro de cada comentário (pacotes: `_conteudo/rascunhos/pacotes.md`).
+- **Pacotes** (`#pacotes`, publicado com o OK do João): Essencial, Gestão e Estratégico, **sem preço e sem
+  limites** (decisões de 16/11/2026). O detalhe comercial (o que é cobrado à parte, notas inclusas) fica no repo
+  **privado** `agencia-prospera` (`marca/pacotes.md`), nunca aqui (este repo é público). Os 3 cartões ficam
+  sempre em 3 colunas até 760px (regra `#pacotes .services`), e o nome do pacote vem acima do título.
+- **Depoimentos**: bloco pronto, **comentado (fora do ar)**. Para publicar, ver as instruções dentro do comentário.
+- O texto do **Sobre** termina com o link "Conheça a equipe" (`/equipe.html`); o rodapé também tem "Nossa equipe".
 - `<!-- BLOG:NOVIDADES -->`: 3 posts mais recentes (só aparece quando há posts).
 - **04 Dúvidas** (FAQ em acordeão) + link para o Guia.
 - **05 Proposta** (`#proposta`): formulário (nome, situação, ramo, faturamento, funcionários,
@@ -297,8 +305,8 @@ tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
 - Criar o **Perfil da Empresa no Google** (guia e textos prontos passados no chat em 25/10);
   depois, mandar o link de "Pedir avaliações" para virar um botão no site.
 - **Depoimentos:** as sócias vão reunir 3–5 (com autorização) → publicar o bloco comentado.
-- **Pacotes:** decidir nomes, preço no site ou não, extras e limites (`_conteudo/rascunhos/pacotes.md`).
-- **Página Quem somos/Equipe** (fundadoras, CRC, trajetória) — para depois.
+- ~~**Pacotes**~~ ✅ decididos em 16/11/2026 (sem preço; detalhe no repo privado `agencia-prospera`).
+- ~~**Página Quem somos/Equipe**~~ ✅ `equipe.html` (16/11/2026). **Falta:** as fotos dos 3 sócios (depois).
 
 ---
 

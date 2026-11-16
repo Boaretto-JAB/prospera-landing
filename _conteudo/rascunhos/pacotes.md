@@ -28,17 +28,9 @@
 | Planejamento tributário anual (Simples × Presumido) | — | — | ✅ |
 | Reunião periódica com a contadora + indicadores financeiros | — | — | ✅ |
 
-## Decisões que faltam (marcar aqui ou responder no chat)
+## Decidido (16/11/2026)
 
-1. **Nomes** dos pacotes (Essencial / Completo / Consultivo são sugestões).
-2. **Preço no site?** Opções: (a) sem preço, só "peça sua proposta" (como a Contplan);
-   (b) "a partir de R$ X/mês" no Essencial — atrai o PJ que compara preço.
-3. **O que é cobrado à parte:** abertura de empresa, alterações contratuais, baixa,
-   IRPF dos sócios, certificado digital a partir do 2º ano (o Guia do CNPJ diz que o 1º ano
-   está incluso na proposta), funcionário adicional, emissão de notas pela Prospera.
-4. **Limites** de cada pacote (ex.: nº de funcionários, nº de notas por mês, faixa de faturamento).
-
-## Para publicar
-
-Depois das decisões, é só pedir: "publica os pacotes". O agente ajusta os textos da seção
-comentada no `index.html`, tira do comentário e coloca "Pacotes" no menu.
+O João decidiu tudo em 16/11/2026: **Essencial, Gestão e Estratégico**, sem preço e sem limites no site.
+O texto publicado está na seção `#pacotes` do `index.html`. O detalhe comercial (o que é cobrado à parte,
+limites, notas inclusas) fica no repositório **privado** `agencia-prospera` (`marca/pacotes.md`), não aqui.
+Este arquivo fica só como histórico do rascunho de out/2026.
