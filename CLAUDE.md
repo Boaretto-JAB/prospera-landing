@@ -271,6 +271,12 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   no rodapé de todas as páginas. A auditoria do `agencia-prospera` confere "Capinzal/SC" em cada página.
 - Auditoria repetível: `scripts/auditoria_site.py` no repo privado `Boaretto-JAB/agencia-prospera`.
 
+- **16/11/2026 (Etapa 3 da Agência):** descrição da home encurtada (146 caracteres), título e resumo da página de
+  advocacia dentro do limite, e **cidades atendidas** no `areaServed` dos dados estruturados da home (Capinzal,
+  Joaçaba, Campos Novos, Santa Catarina e Brasil — a presença local decidida em 26/10/2026), já que a Prospera não
+  tem Perfil da Empresa no Google. Posts: campo opcional **`titulo_seo`** (até 60) no cabeçalho, usado na aba e no
+  Google quando o título do artigo passa de 60; o título do artigo continua o mesmo.
+
 ## 8b. Google Search Console
 
 - Propriedade **prefixo de URL** `https://prospera-contabil.com`, verificada pela **tag HTML**

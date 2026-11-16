@@ -41,7 +41,8 @@ O endereço vira `prospera-contabil.com/blog/endereco-do-post.html`.
 ```
 ---
 titulo: Título claro, com a palavra-chave no começo (até ~60 caracteres — o Google corta acima disso)
-resumo: Uma ou duas frases que aparecem no Google e nos cartões (até 170 caracteres).
+titulo_seo: Título curto para a aba e o Google (opcional, até 60) — só quando o titulo passar de 60
+resumo: Uma ou duas frases que aparecem no Google e nos cartões (até 170 caracteres; o Google mostra até ~160).
 data: AAAA-MM-DD            (mesma data do nome do arquivo; não pode ser no futuro)
 categoria: Simples Nacional (uma da lista abaixo)
 autor: Equipe Prospera      (opcional)

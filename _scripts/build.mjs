@@ -127,6 +127,9 @@ const posts = listar(DIR_BLOG).filter((f) => /^\d{4}-\d{2}-\d{2}-[a-z0-9-]+\.md$
   if (dados.atualizado && Number.isNaN(Date.parse(dados.atualizado))) erros.push(`${arq}: "atualizado" inválido (use AAAA-MM-DD)`);
   if (dados.categoria && !CATEGORIAS.includes(dados.categoria)) erros.push(`${arq}: categoria "${dados.categoria}" fora da lista: ${CATEGORIAS.join(', ')}`);
   if (dados.resumo && dados.resumo.length > 170) erros.push(`${arq}: resumo com ${dados.resumo.length} caracteres (máximo 170 — é o texto que aparece no Google)`);
+  // titulo_seo (opcional, 16/11/2026): o título da aba e do resultado do Google, quando o título do artigo passa de 60
+  // caracteres. O título do artigo (h1, lista, Novidades, feed) continua sendo o "titulo".
+  if (dados.titulo_seo && dados.titulo_seo.length > 60) erros.push(`${arq}: titulo_seo com ${dados.titulo_seo.length} caracteres (máximo 60 — o Google corta acima disso)`);
   if (!/^## Fontes\s*$/m.test(corpo)) erros.push(`${arq}: falta a seção "## Fontes" no fim do texto (regra do guia editorial)`);
   const palavras = corpo.split(/\s+/).filter(Boolean).length;
   return { ...dados, slug, arquivo: arq, corpo, url: `/blog/${slug}.html`, minutos: Math.max(1, Math.round(palavras / 200)) };
@@ -245,7 +248,7 @@ ${md(p.corpo)}
       ${relacionados.length ? `<section class="relacionados"><h2>Leia também</h2><div class="cards">${relacionados.map(cartao).join('\n        ')}</div></section>` : ''}
     </div>`;
     const jsonld = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.titulo, description: p.resumo, datePublished: p.data, dateModified: p.atualizado || p.data, url: SITE + p.url, mainEntityOfPage: SITE + p.url, image: SITE + '/assets/og-image.jpg', inLanguage: 'pt-BR', author: { '@type': 'Organization', name: p.autor || 'Equipe Prospera' }, publisher: ORG };
-    gravacoes.set(p.url.slice(1), pagina({ ...base(true), titulo_seo: esc(p.titulo), descricao: esc(p.resumo), url: SITE + p.url, og_tipo: 'article', og_titulo: esc(p.titulo), jsonld: JSON.stringify(jsonld), conteudo, wa_link: waLink(msg) }));
+    gravacoes.set(p.url.slice(1), pagina({ ...base(true), titulo_seo: esc(p.titulo_seo || p.titulo), descricao: esc(p.resumo), url: SITE + p.url, og_tipo: 'article', og_titulo: esc(p.titulo_seo || p.titulo), jsonld: JSON.stringify(jsonld), conteudo, wa_link: waLink(msg) }));
   }
   const indice = `
     <section class="page-hero">

@@ -1,7 +1,7 @@
 ---
 titulo: Contabilidade para escritórios de advocacia
-titulo_seo: Contabilidade para advogados e escritórios de advocacia · Prospera
-resumo: Advogados, sociedades unipessoais e sociedades de advogados: regime tributário comparado, notas fiscais, retenções e impostos em dia, com atendimento 100% digital.
+titulo_seo: Contabilidade para escritórios de advocacia · Prospera
+resumo: Advogados e sociedades de advocacia: regime tributário comparado, notas fiscais, retenções e impostos em dia, com atendimento 100% digital.
 menu: Advocacia
 ordem: 5
 eyebrow: Contabilidade para a advocacia
