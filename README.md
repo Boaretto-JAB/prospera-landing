@@ -19,6 +19,8 @@ serviço, comércio e indústria, do Simples Nacional ao Lucro Real (público am
 - **`nossa-tecnologia.html`** — o que a tecnologia da Prospera faz, item por item (Receita, certidões,
   certificado, NFS-e, Junta Comercial, conferência com IA, Portal do Cliente). *(gerada, desde 16/11/2026)*
 - **`equipe.html`** — os 3 sócios e os CRCs das contadoras (fotos depois). *(gerada, desde 16/11/2026)*
+- **`politica-de-privacidade.html`** — política de privacidade (LGPD), com link no rodapé de todas as páginas.
+  Exigida pelo LinkedIn para a publicação automática do painel da Agência. *(gerada, 16/11/2026)*
 - A home ganhou a seção **Pacotes** (Essencial, Gestão e Estratégico, sem preço) em 16/11/2026.
 - **`blog/`** — blog com posts sobre contabilidade e impostos (no ar desde 23/10/2026). *(gerado)*
 
