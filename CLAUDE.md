@@ -227,6 +227,12 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   do blog num PR "Blog: …" (o portal avisa, mas publica o PR inteiro).
   **1ª aprovação pelo portal: PR #10 em 16/11/2026** (troca da fonte da Lei 15.270 nos posts do Fator R e dos lucros
   acima de R$ 50 mil): Merge `03d835c` às 07h35 com o comentário "✅ Aprovado no portal da Agência…", conferido no ar.
+- **Conflito ao aprovar ("O GitHub não deixou publicar")**: acontece quando outra mudança entrou na `main` depois que o
+  ramo do PR foi criado e as duas mexem nas mesmas páginas geradas (lista do blog, Novidades, feed). Conserto: juntar a
+  `main` no ramo (`git merge origin/main`), nos conflitos de `.html` gerado ficar com a versão da `main` e rodar o build
+  de novo (ele refaz tudo a partir dos `.md`), commit e push no ramo. Nunca resolver à mão o HTML gerado. Caso real em
+  16/11/2026 (PR #13, depois do post do dia): o post de hoje também estava gerado com o modelo antigo (sem "Pacotes",
+  "Nossa equipe" e "Política de privacidade" no menu) e a nova geração corrigiu.
 - **Tarefa agendada semanal** "Blog semanal da Prospera" (id `trig_01K3GpzZqcZoDNr4oyApcu5G`):
   toda **segunda às 7h38 (Brasília)** abre uma sessão nova que pesquisa as novidades, escreve
   1 post, roda o build e abre (ou acrescenta ao) PR pendente. Avisa o dono por push/e-mail.
