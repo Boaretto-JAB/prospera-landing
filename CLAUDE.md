@@ -288,7 +288,10 @@ node _scripts/build.mjs      # na raiz do repositório (Node 18+; sem npm instal
   automática que guarda a autorização cifrada e não coleta dados de seguidores. **Mudou o site ou um sistema
   (cookie, formulário que grava, novo contador, anúncios)? Revise a página e a data "Última atualização".**
 - Artigos da LGPD citados (7º II/V/VI, 11 II "a", 16 I, 18, 19 II, 39, 41, 48) conferidos no Planalto em 16/11/2026.
-- Encarregado (LGPD, art. 41) indicado na página: **João Augusto Boaretto**, pelo contato@prospera-contabil.com.
+- Encarregado (LGPD, art. 41) indicado na página: **João Augusto Boaretto**, pelo contato@prospera-contabil.com
+  (confirmado pelo João ao aprovar).
+- **No ar desde 16/11/2026:** PR #12, Merge `6f73e96` (aprovado pelo João no chat). Conferido: página 200, link no
+  rodapé da home, calculadora, Guia e equipe, sitemap, e auditoria `--alertas` do `agencia-prospera` sem alerta (19 páginas).
 
 ---
 
