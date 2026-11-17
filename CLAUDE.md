@@ -358,3 +358,10 @@ tocar em DNS, e-mail (Google Workspace) ou configurações da conta do GitHub.
 
 - Repositório clonado em: `~/Projetos/prospera-landing` (no Mac do dono).
 - `git` e `gh` instalados; autenticado como `Boaretto-JAB`. Node 18+ para o build.
+
+## LinkedIn no site (17/11/2026)
+- Link para a página da empresa no LinkedIn: rodapé (ícone) da home e de todas as páginas geradas (`_modelos/pagina.html`),
+  botão "LinkedIn" na seção Contato da home e `sameAs` do schema.
+- **Endereço provisório:** `https://www.linkedin.com/company/prospera-cont%C3%A1bil/` (a URL pública da página ficou
+  com acento). Por volta de **17/12/2026** o João corrige a URL no LinkedIn para `prospera-contabil` (sem acento);
+  aí trocar aqui em `index.html` e `_modelos/pagina.html` e rodar `node _scripts/build.mjs`.
